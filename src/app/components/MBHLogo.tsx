@@ -12,8 +12,9 @@ import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
   theme?: "dark" | "light" | "crimson";
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl" | number;
   className?: string;
+  color?: string;
 }
 
 const sizeMap = {
@@ -26,7 +27,7 @@ const sizeMap = {
 function getLogoAsset(
   variant: "full" | "mark" | "wordmark" = "full",
   theme: "dark" | "light" | "crimson" = "dark",
-  size: "sm" | "md" | "lg" | "xl" = "md"
+  size: "sm" | "md" | "lg" | "xl" | number = "md"
 ): string {
   if (variant === "mark") {
     return theme === "light" ? smallLightSvg : smallDarkSvg;
@@ -57,9 +58,12 @@ export function MBHMark({
   theme = "dark",
   className = "",
   size = "md",
+  color,
 }: Omit<LogoProps, "variant"> = {}) {
   const src = getLogoAsset("mark", theme, size);
-  const px = sizeMap[size];
+  const px = typeof size === "number" ? size : sizeMap[size ?? "md"];
+  const fillColor = color ?? (theme === "light" ? "#faf6f1" : "#10464e");
+  const strokeColor = color ?? (theme === "light" ? "#10464e" : "#faf6f1");
 
   return (
     <svg
@@ -85,7 +89,7 @@ export function MBHLogo({
   className = "",
 }: LogoProps = {}) {
   const src = getLogoAsset(variant, theme, size);
-  const px = sizeMap[size];
+  const px = typeof size === "number" ? size : sizeMap[size ?? "md"];
 
   return (
     <img

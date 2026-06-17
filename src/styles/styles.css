@@ -1,4 +1,4 @@
-@custom-variant dark (&:is(.dark *));
+/* Removed invalid at-rule @custom-variant which caused a warning. */
 
 :root {
   --font-size: 16px;

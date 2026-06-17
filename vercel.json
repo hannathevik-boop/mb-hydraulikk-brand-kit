@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "build": {
+    "command": "pnpm build",
+    "outputDirectory": "dist"
+  }
+}

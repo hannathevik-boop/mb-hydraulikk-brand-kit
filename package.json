@@ -1,5 +1,5 @@
 {
-  "packageManager": "pnpm@11.7.0"
+  "packageManager": "pnpm@11.7.0",
   "name": "@figma/my-make-file",
   "private": true,
   "version": "0.0.1",
@@ -76,7 +76,8 @@
     "react-dom": "18.3.1",
     "tailwindcss": "4.1.12",
     "typescript": "5.7.3",
-    "vite": "6.3.5"
+    "vite": "6.3.5",
+    "@types/node": "^20.14.0"
   },
   "peerDependencies": {
     "react": "18.3.1",
