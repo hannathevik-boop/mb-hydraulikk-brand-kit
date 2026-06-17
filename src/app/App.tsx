@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MBHLogo, MBHMark } from "./components/MBHLogo";
+import { MBHLogo } from "./components/MBHLogo";
 import { LogoSection, ColorPaletteSection } from "./components/BrandSection";
 import { TypographySection } from "./components/TypographySection";
 import { IconSection } from "./components/IconSection";
@@ -95,7 +95,7 @@ export default function App() {
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="website"><WebsitePreviewSection /></div>
 
-        <div style={{ borderTop: "1px solid rgba(16,70,78,0.1)", padding: "32px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ borderTop: "1px solid rgba(16,70,78,0.1)", padding: "32px 0", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
           <MBHLogo variant="wordmark" theme="light" size="sm" />
           <span style={{ fontSize: 11, color: "#b9bcac", letterSpacing: "0.1em" }}>BRAND KIT v1.0 · 2026 · MB HYDRAULIKK AS · MJOSUNDET, AURE</span>
         </div>

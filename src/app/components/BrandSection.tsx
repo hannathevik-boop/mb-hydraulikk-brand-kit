@@ -23,14 +23,14 @@ function ColorSwatch({ c }: { c: typeof COLORS[0] }) {
     <button
       onClick={copy}
       className="group flex flex-col overflow-hidden transition-transform hover:-translate-y-1"
-      style={{ border: `1px solid rgba(16,70,78,0.12)` }}
+      style={{ border: `1px solid rgba(16,70,78,0.12)`, background: "#ffffff", padding: 0 }}
     >
       <div style={{ background: c.hex, height: 96 }} className="w-full" />
-      <div className="p-3 bg-white text-left">
-        <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 13, color: "#10464e", letterSpacing: "0.04em" }}>{c.name}</div>
-        <div style={{ fontFamily: "monospace", fontSize: 12, color: "#858f8f", marginTop: 2 }}>{c.hex}</div>
-        <div style={{ fontSize: 11, color: "#b9bcac", marginTop: 4 }}>{c.usage}</div>
-        <div style={{ fontSize: 10, color: copied ? "#641919" : "#b9bcac", marginTop: 4, transition: "color 0.2s" }}>
+      <div className="p-3 bg-white" style={{ background: "#ffffff", textAlign: "left", margin: 8 }}>
+        <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 13, color: "#10464e", letterSpacing: "0.04em", textAlign: "left" }}>{c.name}</div>
+        <div style={{ fontFamily: "monospace", fontSize: 12, color: "#858f8f", marginTop: 2, textAlign: "left" }}>{c.hex}</div>
+        <div style={{ fontSize: 11, color: "#b9bcac", marginTop: 4, textAlign: "left" }}>{c.usage}</div>
+        <div style={{ fontSize: 10, color: copied ? "#641919" : "#b9bcac", marginTop: 4, transition: "color 0.2s", textAlign: "left" }}>
           {copied ? "Copied!" : "Click to copy"}
         </div>
       </div>
@@ -90,15 +90,15 @@ export function LogoSection() {
         Brand Identity
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        MB Hydraulikk sitt hexagonale merke refererer til industriell presisjon og nordnorsk maritim arv — forankra i Mjosundet sidan 1926. Bruk med klart rom lik halve merkebreidda.
+        MB Hydraulikk sitt merke refererer til industriell presisjon og norsk maritim arv — forankra i Mjosundet sidan 1926.
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 16 }}>
         {LOGO_VARIANTS.map((v) => (
           <div
             key={v.label}
-            style={{ background: v.bg, padding: 32, display: "flex", flexDirection: "column", alignItems: "center", gap: 16, border: "1px solid rgba(16,70,78,0.1)" }}
+            style={{ background: v.bg, padding: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16, border: "1px solid rgba(16,70,78,0.1)" }}
           >
-            <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <MBHLogo variant={v.variant} theme={v.theme} size="lg" />
             </div>
             <div style={{ fontSize: 11, letterSpacing: "0.12em", color: v.bg === "#faf6f1" ? "#858f8f" : "rgba(255,255,255,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>

@@ -91,9 +91,9 @@ const services = [
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 40, color: "#10464e", marginBottom: 48, letterSpacing: "-0.01em" }}>
         Kompetanse som leverer
       </h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(16,70,78,0.1)" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 1, background: "rgba(16,70,78,0.1)" }}>
         {services.map(s => (
-          <div key={s.title} style={{ background: "#faf6f1", padding: 40 }}>
+          <div key={s.title} style={{ background: "#faf6f1", padding: 40, flex: "1 1 260px", minWidth: 260 }}>
             <div style={{ marginBottom: 20 }}>{s.icon}</div>
             <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 17, color: "#10464e", marginBottom: 10 }}>{s.title}</h3>
             <p style={{ fontSize: 13, color: "#858f8f", lineHeight: 1.65 }}>{s.desc}</p>
@@ -127,7 +127,7 @@ function FooterPreview() {
           </div>
         ))}
       </div>
-      <div style={{ borderTop: "1px solid rgba(185,188,172,0.12)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ borderTop: "1px solid rgba(185,188,172,0.12)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
         <span style={{ fontSize: 12, color: "rgba(250,246,241,0.3)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>© 2026 MB Hydraulikk AS · Mjosundet, 6697 Aure</span>
         <span style={{ fontSize: 12, color: "rgba(250,246,241,0.3)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>mbh.no · post@mbh.no</span>
       </div>

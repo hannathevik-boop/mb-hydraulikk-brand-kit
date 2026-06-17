@@ -91,7 +91,7 @@ export function MBHLogo({
     <img
       src={src}
       alt={`MB Hydraulikk ${variant} logo`}
-      style={{ height: px, width: "auto" }}
+      style={{ maxWidth: "100%", maxHeight: px, width: "auto", height: "auto" }}
       className={className}
     />
   );
