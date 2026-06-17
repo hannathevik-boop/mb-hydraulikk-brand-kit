@@ -1,14 +1,13 @@
-import React from "react";
-import bigBlack from "./ui/svg-logos-test/big-black.svg";
-import bigDark from "./ui/svg-logos-test/big-dark.svg";
-import bigLight from "./ui/svg-logos-test/big-light.svg";
-import mbDark from "./ui/svg-logos-test/mb-dark.svg";
-import mbLight from "./ui/svg-logos-test/mb-light.svg";
-import smallBlack from "./ui/svg-logos-test/small-black.svg";
-import smallDark from "./ui/svg-logos-test/small-dark.svg";
-import smallLight from "./ui/svg-logos-test/small-light.svg";
-import midSmallDark from "./ui/svg-logos-test/mid-small-dark.svg";
-import midSmallLight from "./ui/svg-logos-test/mid-small-light.svg";
+import bigBlackSvg from "./ui/svg-logos-test/big-black.svg";
+import bigDarkSvg from "./ui/svg-logos-test/big-dark.svg";
+import bigLightSvg from "./ui/svg-logos-test/big-light.svg";
+import mbDarkSvg from "./ui/svg-logos-test/mb-dark.svg";
+import mbLightSvg from "./ui/svg-logos-test/mb-light.svg";
+import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
+import smallDarkSvg from "./ui/svg-logos-test/small-dark.svg";
+import smallLightSvg from "./ui/svg-logos-test/small-light.svg";
+import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
+import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
@@ -17,7 +16,7 @@ interface LogoProps {
   className?: string;
 }
 
-const sizeMap: Record<NonNullable<LogoProps["size"]>, number> = {
+const sizeMap = {
   sm: 24,
   md: 40,
   lg: 56,
@@ -25,79 +24,77 @@ const sizeMap: Record<NonNullable<LogoProps["size"]>, number> = {
 };
 
 function getLogoAsset(
-  variant: LogoProps["variant"],
-  theme: LogoProps["theme"],
-  size: LogoProps["size"],
-) {
+  variant: "full" | "mark" | "wordmark" = "full",
+  theme: "dark" | "light" | "crimson" = "dark",
+  size: "sm" | "md" | "lg" | "xl" = "md"
+): string {
   if (variant === "mark") {
-    if (theme === "light") return smallLight;
-    if (theme === "crimson") return smallBlack;
-    return smallDark;
+    return theme === "light" ? smallLightSvg : smallDarkSvg;
   }
 
   if (variant === "wordmark") {
-    if (theme === "light") return mbLight;
-    return mbDark;
+    return theme === "light" ? mbLightSvg : mbDarkSvg;
   }
 
-  if (size === "sm") {
-    if (theme === "light") return smallLight;
-    if (theme === "crimson") return smallBlack;
-    return smallDark;
+  // Full logo
+  if (size === "sm" || size === "md") {
+    return theme === "light"
+      ? smallLightSvg
+      : theme === "crimson"
+        ? smallDarkSvg
+        : smallDarkSvg;
   }
 
-  if (size === "md") {
-    if (theme === "light") return midSmallLight;
-    return midSmallDark;
-  }
-
-  if (theme === "light") return bigLight;
-  if (theme === "crimson") return bigBlack;
-  return bigDark;
+  // lg and xl sizes
+  return theme === "light"
+    ? bigLightSvg
+    : theme === "crimson"
+      ? bigDarkSvg
+      : bigDarkSvg;
 }
 
 export function MBHMark({
-  color = "#10464e",
-  size = 48,
-  className,
-}: {
-  color?: string;
-  size?: number;
-  className?: string;
-}) {
+  theme = "dark",
+  className = "",
+  size = "md",
+}: Omit<LogoProps, "variant"> = {}) {
+  const src = getLogoAsset("mark", theme, size);
+  const px = sizeMap[size];
+
   return (
-    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" className={className}>
-      <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill={color} />
-      <path
-        d="M18 40 Q25 32 32 40 Q39 48 46 40 Q53 32 62 40"
-        stroke="#faf6f1"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M22 50 Q29 43 36 50 Q43 57 50 50 Q57 43 60 47"
-        stroke="#faf6f1"
+    <svg
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ width: px, height: px }}
+      className={className}
+    >
+      <polygon
+        points="50,10 90,30 90,70 50,90 10,70 10,30"
+        fill={theme === "light" ? "#faf6f1" : "#10464e"}
+        stroke={theme === "light" ? "#10464e" : "#faf6f1"}
         strokeWidth="2"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.5"
       />
-      <line x1="40" y1="14" x2="40" y2="30" stroke="#641919" strokeWidth="3.5" strokeLinecap="round" />
     </svg>
   );
 }
 
 export function MBHLogo({
   variant = "full",
-  theme = "light",
+  theme = "dark",
   size = "md",
   className = "",
-}: LogoProps) {
+}: LogoProps = {}) {
   const src = getLogoAsset(variant, theme, size);
-  const height = sizeMap[size];
+  const px = sizeMap[size];
 
-  return <img src={src} alt="MB Hydraulikk logo" className={className} style={{ height, width: "auto", display: "block" }} />;
+  return (
+    <img
+      src={src}
+      alt={`MB Hydraulikk ${variant} logo`}
+      style={{ height: px, width: "auto" }}
+      className={className}
+    />
+  );
 }
 
 export default MBHLogo;
