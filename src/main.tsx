@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/index.css";
+// @ts-ignore
+import "./styles/styles.css";
 import App from "./app/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

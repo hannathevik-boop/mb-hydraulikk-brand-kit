@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { MBHLogo, MBHMark } from "./MBHLogo";
-import { IconAnchor, IconShip, IconGear, IconPressureGauge, IconPropeller, IconShield, IconWave, IconCompass } from "./MBHIcons";
+import MBHLogo from "./MBHLogo";
+import { IconAnchor, IconShip, IconGear, IconPropeller, IconShield, IconCompass } from "./MBHIcons";
 import { SectionLabel } from "./BrandSection";
 
-function NavPreview() {
+function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
     <nav style={{ background: "#10464e", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
       <MBHLogo variant="full" theme="dark" size="md" />
@@ -25,7 +24,7 @@ function NavPreview() {
   );
 }
 
-function HeroPreview() {
+function HeroPreview(): import("react/jsx-runtime").JSX.Element {
   return (
     <div style={{ position: "relative", background: "#0a2e35", minHeight: 520, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <img
@@ -73,8 +72,8 @@ function HeroPreview() {
   );
 }
 
-function ServicesPreview() {
-  const services = [
+function ServicesPreview(): import("react/jsx-runtime").JSX.Element {
+const services = [
     { icon: <IconAnchor size={32} color="#10464e" strokeWidth={1.5} />, title: "Vinsjar & Capstanar", desc: "Ankervinsjar, slepevinsjar, trålevinsjar og capstanar i aluminium og rustfritt stål for alle maritime bruksområde." },
     { icon: <IconShip size={32} color="#10464e" strokeWidth={1.5} />, title: "Kraner & Løfteutstyr", desc: "Kraner, bommar og davitar for last, redning og MOB-operasjonar. Tilpassa fartøy og plattformar." },
     { icon: <IconPropeller size={32} color="#10464e" strokeWidth={1.5} />, title: "Sidepropellar", desc: "Hydrauliske sidepropellar for presis manøvrering. Kompakt, kraftig og minimalt vedlikehald." },
