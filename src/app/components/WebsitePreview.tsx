@@ -8,7 +8,7 @@ function NavPreview(): import("react/jsx-runtime").JSX.Element {
       <MBHLogo variant="full" theme="light" size="md" />
       <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
         {["Produkt", "Tenester", "Kundar", "Om oss", "Kontakt"].map(item => (
-          <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, fontSize: 14, letterSpacing: "0.04em", color: "rgba(250,246,241,0.75)", cursor: "pointer" }}>
+          <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 400, fontSize: 16, letterSpacing: "0.04em", color: "#10464e", cursor: "pointer" }}>
             {item}
           </span>
         ))}
