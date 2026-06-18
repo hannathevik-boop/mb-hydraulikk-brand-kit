@@ -27,7 +27,7 @@ export function PatternSection() {
         Gjentakende grafiske motiver for bakgrunner, emballasje og trykt materiale.
       </p>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
 
         {/* Hex grid pattern */}
         <PatternTile bg="#10464e" label="HEX GRID — On Teal">

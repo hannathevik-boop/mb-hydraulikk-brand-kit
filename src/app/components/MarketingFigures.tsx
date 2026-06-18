@@ -109,7 +109,7 @@ export function MarketingFigures() {
         ⚠ ILLUSTRATIVE FIGURAR — IKKJE REELL FORRETNINGSDATA
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, marginBottom: 24 }}>
         <div style={{ background: "#ffffff", border: "1px solid rgba(16,70,78,0.1)", padding: 32 }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV VEKST (IKKJE REELL)</div>
           <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 20 }}>Indeksert leveransevekst</div>
@@ -128,7 +128,7 @@ export function MarketingFigures() {
         <BarChart />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(16,70,78,0.1)" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 1, background: "rgba(16,70,78,0.1)" }}>
         {[
           { val: "100 år", label: "Stifta 1926", delta: "Jubileum 2026" },
           { val: "Global", label: "Rekkevidde", delta: "Lokal kompetanse" },

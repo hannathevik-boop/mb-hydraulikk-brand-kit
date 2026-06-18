@@ -24,7 +24,7 @@ export function TypographySection() {
       </p>
 
       {/* Font weights showcase */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16, marginBottom: 64, borderBottom: "1px solid rgba(16,70,78,0.12)", paddingBottom: 48 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16, marginBottom: 64, borderBottom: "1px solid rgba(16,70,78,0.12)", paddingBottom: 48 }}>
         {[
           { w: 300, label: "Light" },
           { w: 400, label: "Regular" },
