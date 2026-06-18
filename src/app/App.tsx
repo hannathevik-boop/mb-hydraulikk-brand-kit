@@ -33,12 +33,12 @@ export default function App() {
 
       {/* Header */}
       <header style={{ background: "#10464e", padding: "0 40px", height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <MBHLogo variant="full" theme="dark" size="sm" />
+        <MBHLogo variant="full" theme="light" size="sm" />
         <nav style={{ display: "flex", gap: 4 }}>
           {SECTIONS.map(s => (
             <button key={s.id} onClick={() => goTo(s.id)} style={{
               padding: "6px 12px", background: "transparent", border: "none",
-              color: active === s.id ? "#faf6f1" : "rgba(250,246,241,0.45)",
+              color: active === s.id ? "#faf6f1" : "#FAF6F1",
               fontSize: 12, fontWeight: 600, cursor: "pointer",
             }}>
               {s.label}
@@ -52,12 +52,12 @@ export default function App() {
       <div style={{ background: "#10464e", padding: "80px 80px 80px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}>
           <div style={{ width: 48, height: 2, background: "#641919" }} />
-          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.24em", color: "#b9bcac" }}>
+          <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.24em", color: "#FAF6F1" }}>
             VISUELL IDENTITET · mbh.no · MJOSUNDET, AURE
           </span>
         </div>
         <h1 style={{ fontWeight: 800, fontSize: 80, color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 24 }}>
-          MB <span style={{ color: "#b9bcac" }}>Hydraulikk</span>
+          MB <span style={{ color: "#A3B6B9" }}>Hydraulikk</span>
         </h1>
         <p style={{ fontSize: 17, color: "rgba(250,246,241,0.6)", lineHeight: 1.75, maxWidth: 640, marginBottom: 56 }}>
           Komplett visuell identitet — logo, fargar, typografi, ikonografi, UI-komponentar og nettside. For eit selskap som har utvikla og produsert hydraulisk utstyr for maritimt miljø sidan 1926.

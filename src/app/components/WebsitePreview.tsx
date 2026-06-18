@@ -41,7 +41,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
         </div>
         <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 64, lineHeight: 1.05, color: "#faf6f1", marginBottom: 28, letterSpacing: "-0.02em" }}>
           Frå Aure<br />
-          <span style={{ color: "#641919" }}>til verdshava.</span>
+          <span style={{ color: "#10464eb8" }}>til verdshava.</span>
         </h1>
         <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 17, color: "rgba(250,246,241,0.65)", lineHeight: 1.7, maxWidth: 520, marginBottom: 48 }}>
           MB Hydraulikk utviklar og produserer vinsjar, kraner, davitar og sidepropellar i sjøvassbestandig aluminium — skreddarsydde for maritimt bruk over heile verda.
