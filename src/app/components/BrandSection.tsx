@@ -46,8 +46,9 @@ export function ColorPaletteSection() {
         Merkevarefarger
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        Fargene er hentet fra materialene og omgivelsene vi arbeider med til daglig.
-Fargane er henta frå materiala og miljøa vi jobbar i – aluminium, måla ståloverflater, maskineri og hav. Paletten byggjer på reelle referansar frå hydraulisk utstyr og maritim drift.      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 16 }}>
+        Fargene er hentet fra materialene og omgivelsene vi arbeider med til daglig. Fargane er henta frå materiala og miljøa vi jobbar i – aluminium, måla ståloverflater, maskineri og hav. Paletten byggjer på reelle referansar frå hydraulisk utstyr og maritim drift.
+      </p>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 16 }}>
         {COLORS.map((c) => <ColorSwatch key={c.hex} c={c} />)}
       </div>
     </section>

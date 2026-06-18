@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { SectionLabel } from "./BrandSection";
 import {
   IconAnchor, IconValve, IconPiston, IconPressureGauge, IconPropeller,
-  IconWave, IconShip, IconCompass, IconChain, IconGear, IconPipe,
-  IconHydraulic, IconBuoy, IconWrench, IconOilDrop, IconShield
+  IconWave, IconShip, IconBoat, IconCrane, IconWinch, IconCompass,
+  IconChain, IconGear, IconPipe, IconHydraulic, IconBuoy, IconWrench,
+  IconOilDrop, IconShield
 } from "./MBHIcons";
 
 const ICONS = [
@@ -14,6 +15,9 @@ const ICONS = [
   { name: "Propeller", component: IconPropeller },
   { name: "Wave", component: IconWave },
   { name: "Ship", component: IconShip },
+  { name: "Boat", component: IconBoat },
+  { name: "Crane", component: IconCrane },
+  { name: "Winch", component: IconWinch },
   { name: "Compass", component: IconCompass },
   { name: "Chain", component: IconChain },
   { name: "Gear", component: IconGear },

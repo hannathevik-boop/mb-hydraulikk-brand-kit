@@ -101,6 +101,46 @@ export function IconShip({ size = 32, color = "#10464e", strokeWidth = 2, classN
   );
 }
 
+export function IconBoat({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, color, strokeWidth)} className={className}>
+      <path d="M6 26 C14 34 34 34 42 26 L38 22 H10 Z" />
+      <path d="M10 22 L12 14 H36 L38 22" />
+      <line x1="24" y1="14" x2="24" y2="36" />
+      <path d="M14 26 H34" />
+    </svg>
+  );
+}
+
+export function IconCrane({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, color, strokeWidth)} className={className}>
+      <line x1="10" y1="42" x2="10" y2="16" />
+      <line x1="10" y1="16" x2="34" y2="16" />
+      <line x1="22" y1="16" x2="22" y2="28" />
+      <line x1="22" y1="28" x2="30" y2="34" />
+      <path d="M30 34 L28 38 Q24 42 20 38 L18 34" />
+      <line x1="28" y1="38" x2="28" y2="44" />
+    </svg>
+  );
+}
+
+export function IconWinch({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, color, strokeWidth)} className={className}>
+      <circle cx="24" cy="24" r="10" />
+      <path d="M24 14 V8" />
+      <path d="M24 34 V40" />
+      <path d="M14 24 H8" />
+      <path d="M34 24 H40" />
+      <path d="M18 18 L12 12" />
+      <path d="M30 18 L36 12" />
+      <path d="M18 30 L12 36" />
+      <path d="M30 30 L36 36" />
+    </svg>
+  );
+}
+
 export function IconCompass({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
   return (
     <svg {...base(size, color, strokeWidth)} className={className}>
