@@ -104,10 +104,12 @@ export function IconShip({ size = 32, color = "#10464e", strokeWidth = 2, classN
 export function IconBoat({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
   return (
     <svg {...base(size, color, strokeWidth)} className={className}>
-      <path d="M6 26 C14 34 34 34 42 26 L38 22 H10 Z" />
-      <path d="M10 22 L12 14 H36 L38 22" />
-      <line x1="24" y1="14" x2="24" y2="36" />
-      <path d="M14 26 H34" />
+      <path d="M6 30 C14 36 34 36 42 30 L38 26 H10 Z" />
+      <path d="M10 26 L12 18 H24 L30 22 L34 18 H36 L38 26" />
+      <path d="M12 30 H18 M22 30 H30" />
+      <line x1="20" y1="18" x2="20" y2="10" />
+      <line x1="28" y1="18" x2="28" y2="12" />
+      <path d="M4 34 H44" />
     </svg>
   );
 }
@@ -115,12 +117,15 @@ export function IconBoat({ size = 32, color = "#10464e", strokeWidth = 2, classN
 export function IconCrane({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
   return (
     <svg {...base(size, color, strokeWidth)} className={className}>
-      <line x1="10" y1="42" x2="10" y2="16" />
-      <line x1="10" y1="16" x2="34" y2="16" />
-      <line x1="22" y1="16" x2="22" y2="28" />
-      <line x1="22" y1="28" x2="30" y2="34" />
-      <path d="M30 34 L28 38 Q24 42 20 38 L18 34" />
-      <line x1="28" y1="38" x2="28" y2="44" />
+      <rect x="8" y="34" width="32" height="8" rx="2" />
+      <line x1="16" y1="34" x2="16" y2="14" />
+      <path d="M16 14 L34 10 L36 18" />
+      <line x1="32" y1="12" x2="32" y2="26" />
+      <line x1="20" y1="24" x2="30" y2="20" />
+      <path d="M30 20 L34 24 L30 28" />
+      <line x1="26" y1="26" x2="26" y2="38" />
+      <path d="M22 34 L30 34" />
+      <path d="M18 20 L28 24" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -193,6 +198,33 @@ export function IconHydraulic({ size = 32, color = "#10464e", strokeWidth = 2, c
       <rect x="32" y="28" width="14" height="10" rx="1" />
       <line x1="14" y1="34" x2="14" y2="42" />
       <line x1="10" y1="42" x2="18" y2="42" />
+    </svg>
+  );
+}
+
+export function IconCylinder({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, color, strokeWidth)} className={className}>
+      <rect x="8" y="14" width="28" height="16" rx="3" />
+      <rect x="4" y="18" width="6" height="8" rx="2" />
+      <rect x="38" y="18" width="6" height="8" rx="2" />
+      <line x1="16" y1="22" x2="32" y2="22" strokeWidth="1.5" />
+      <line x1="20" y1="14" x2="20" y2="8" />
+      <line x1="28" y1="14" x2="28" y2="8" />
+    </svg>
+  );
+}
+
+export function IconPump({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, color, strokeWidth)} className={className}>
+      <rect x="10" y="10" width="28" height="20" rx="4" />
+      <circle cx="24" cy="20" r="6" />
+      <path d="M16 14 L10 10" />
+      <path d="M32 14 L38 10" />
+      <path d="M16 26 L10 30" />
+      <path d="M32 26 L38 30" />
+      <line x1="24" y1="26" x2="24" y2="34" />
     </svg>
   );
 }

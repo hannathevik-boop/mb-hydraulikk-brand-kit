@@ -3,8 +3,8 @@ import { SectionLabel } from "./BrandSection";
 import {
   IconAnchor, IconValve, IconPiston, IconPressureGauge, IconPropeller,
   IconWave, IconShip, IconBoat, IconCrane, IconWinch, IconCompass,
-  IconChain, IconGear, IconPipe, IconHydraulic, IconBuoy, IconWrench,
-  IconOilDrop, IconShield
+  IconChain, IconGear, IconPipe, IconHydraulic, IconCylinder, IconPump,
+  IconBuoy, IconWrench, IconOilDrop, IconShield
 } from "./MBHIcons";
 
 const ICONS = [
@@ -18,11 +18,13 @@ const ICONS = [
   { name: "Boat", component: IconBoat },
   { name: "Crane", component: IconCrane },
   { name: "Winch", component: IconWinch },
+  { name: "Hydraulic", component: IconHydraulic },
+  { name: "Cylinder", component: IconCylinder },
+  { name: "Pump", component: IconPump },
   { name: "Compass", component: IconCompass },
   { name: "Chain", component: IconChain },
   { name: "Gear", component: IconGear },
   { name: "Pipe", component: IconPipe },
-  { name: "Hydraulic", component: IconHydraulic },
   { name: "Buoy", component: IconBuoy },
   { name: "Wrench", component: IconWrench },
   { name: "Oil Drop", component: IconOilDrop },
