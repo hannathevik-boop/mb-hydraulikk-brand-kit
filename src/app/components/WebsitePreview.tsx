@@ -4,10 +4,10 @@ import { SectionLabel } from "./BrandSection";
 
 function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
-    <nav style={{ background: "#10464E", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-      <MBHLogo variant="full" theme="dark" size="md" />
+    <nav style={{ background: "#10464E", opacity: 0.8, padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <MBHLogo variant="full" theme="light" size="md" />
       <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
-        {["PRODUKT", "TENESTER", "KUNDAR", "OM OSS"].map(item => (
+        {["Produkt", "Tenester", "Kunder", "Om oss"].map(item => (
           <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, fontSize: 14, letterSpacing: "0.04em", color: "#faf6f1", cursor: "pointer" }}>
             {item}
           </span>
