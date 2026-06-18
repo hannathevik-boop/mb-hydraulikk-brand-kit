@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MBHLogo } from "./components/MBHLogo";
 import { LogoSection, ColorPaletteSection } from "./components/BrandSection";
 import { TypographySection } from "./components/TypographySection";
 import { IconSection } from "./components/IconSection";
 import { UIComponentsSection } from "./components/UIComponentsSection";
 import { MarketingFigures } from "./components/MarketingFigures";
-import { WebsitePreviewSection, WebsitePreviewPage } from "./components/WebsitePreview";
+import { WebsitePreviewSection } from "./components/WebsitePreview";
 import { PatternSection } from "./components/PatternSection";
 
 const SECTIONS = [
@@ -21,29 +21,11 @@ const SECTIONS = [
 
 export default function App() {
   const [active, setActive] = useState("logo");
-  const [route, setRoute] = useState(() => window.location.pathname === "/preview" ? "/preview" : "/");
-
-  useEffect(() => {
-    const onPop = () => setRoute(window.location.pathname);
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
-  }, []);
 
   function goTo(id: string) {
     setActive(id);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
-  }
-
-  function navigate(path: string) {
-    if (window.location.pathname !== path) {
-      window.history.pushState({}, "", path);
-    }
-    setRoute(path);
-  }
-
-  if (route === "/preview") {
-    return <WebsitePreviewPage onClose={() => navigate("/")} />;
   }
 
   return (
@@ -113,7 +95,7 @@ export default function App() {
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="patterns"><PatternSection /></div>
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
-        <div id="website"><WebsitePreviewSection onOpenPreview={() => navigate("/preview")} /></div>
+        <div id="website"><WebsitePreviewSection /></div>
 
         <div style={{ borderTop: "1px solid rgba(16,70,78,0.1)", padding: "32px 0", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
           <MBHLogo variant="wordmark" theme="light" size="sm" />
