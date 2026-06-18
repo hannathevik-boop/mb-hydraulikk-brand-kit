@@ -4,7 +4,7 @@ import { SectionLabel } from "./BrandSection";
 
 function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
-    <nav style={{ background: "#10464E", opacity: 0.8, padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+    <nav style={{ background: "#10464eb8", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
       <MBHLogo variant="full" theme="light" size="md" />
       <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
         {["Produkt", "Tenester", "Kunder", "Om oss"].map(item => (
