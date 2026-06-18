@@ -48,7 +48,7 @@ export function IconSection() {
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24, marginBottom: 48 }}>
         <div>
           <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 8 }}>
-            Maritime & Hydraulics Icons
+            Hydrauliske og maritime ikoner
           </h2>
           <p style={{ color: "#858f8f", fontSize: 15, maxWidth: 480 }}>
              20 tilpassa SVG-ikon teikna på eit 48 px rutenett. 2 px strek, avrunda samanføyingar. Utvikla for bruk i hydraulikk- og maritime kontekstar.          </p>

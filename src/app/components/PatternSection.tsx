@@ -17,12 +17,12 @@ function PatternTile({ bg, children, label }: { bg: string; children: React.Reac
 export function PatternSection() {
   return (
     <section style={{ padding: "80px 0" }}>
-      <SectionLabel>08 — PATTERNS & TEXTURES</SectionLabel>
+      <SectionLabel>08 — MØNSTRE OG TEKSTURER</SectionLabel>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 8 }}>
-        Brand Patterns
+        Merkevaremønstre
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        Repeating graphic motifs for backgrounds, packaging, and print collateral.
+        Gjentakende grafiske motiver for bakgrunner, emballasje og trykt materiale.
       </p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>

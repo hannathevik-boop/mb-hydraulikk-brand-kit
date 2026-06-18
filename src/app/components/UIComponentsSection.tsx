@@ -136,14 +136,14 @@ function Card({ title, tag, desc, icon }: { title: string; tag: string; desc: st
 export function UIComponentsSection() {
   return (
     <section style={{ padding: "80px 0" }}>
-      <SectionLabel>05 — UI COMPONENTS</SectionLabel>
+      <SectionLabel>05 — UI KOMPONENTER</SectionLabel>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 48 }}>
-        Component Library
+        Komponentbibliotek for digitale flater
       </h2>
 
       {/* Buttons */}
       <div style={{ marginBottom: 56 }}>
-        <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>BUTTONS</div>
+        <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>KNAPPER</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", marginBottom: 16 }}>
           <Btn variant="primary" size="lg">Primary Large</Btn>
           <Btn variant="primary">Primary</Btn>
@@ -161,7 +161,7 @@ export function UIComponentsSection() {
 
       {/* Badges */}
       <div style={{ marginBottom: 56 }}>
-        <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>BADGES & TAGS</div>
+        <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>MERKER OG TAGS</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
           <Badge label="Hydraulikk" variant="teal" />
           <Badge label="Maritim" variant="crimson" />
@@ -175,7 +175,7 @@ export function UIComponentsSection() {
 
       {/* Inputs */}
       <div style={{ marginBottom: 56 }}>
-        <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>FORM INPUTS</div>
+        <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>INNDATA</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20, maxWidth: 700 }}>
           <InputField label="Navn" placeholder="Ola Nordmann" />
           <InputField label="E-post" placeholder="post@bedrift.no" type="email" />

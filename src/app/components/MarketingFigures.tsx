@@ -98,7 +98,7 @@ function DonutChart() {
 export function MarketingFigures() {
   return (
     <section style={{ padding: "80px 0" }}>
-      <SectionLabel>06 — MARKETING FIGURES</SectionLabel>
+      <SectionLabel>06 — TAL OG FIGURAR</SectionLabel>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 8 }}>
         Datavisualisering
       </h2>
