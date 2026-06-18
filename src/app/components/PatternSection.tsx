@@ -1,7 +1,9 @@
 import React from "react";
 import { SectionLabel } from "./BrandSection";
 import { MBHMark } from "./MBHLogo";
-import { IconWave, IconAnchor, IconGear, IconHydraulic, IconPropeller, IconBoat, IconPump, IconCylinder, IconLightning } from "./MBHIcons";
+import { IconHydraulic, IconPropeller, IconBoat, IconPump, IconCylinder } from "./MBHIcons";
+import lynetSvg from "./ui/svg-logos-test/lynet_.svg";
+import mbLightSvg from "./ui/svg-logos-test/mb-light.svg";
 
 function PatternTile({ bg, children, label }: { bg: string; children: React.ReactNode; label: string }) {
   return (
@@ -67,13 +69,13 @@ export function PatternSection() {
         <PatternTile bg="#0a2e35" label="MARK WATERMARK — On Dark">
           <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ position: "relative", width: 280, height: 280, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <IconLightning size={280} color="rgba(250,246,241,0.08)" strokeWidth={1.5} />
-              <div style={{ position: "absolute", fontSize: 120, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 900, color: "rgba(250,246,241,0.06)", letterSpacing: "-0.05em" }}>MB</div>
+              <img src={lynetSvg} alt="lightning" style={{ width: 280, height: 280, opacity: 0.08 }} />
+              <img src={mbLightSvg} alt="MB" style={{ position: "absolute", width: 200, height: 200, opacity: 0.06 }} />
             </div>
           </div>
           <div style={{ position: "absolute", bottom: 20, left: 20, display: "flex", alignItems: "center", gap: 6 }}>
-            <IconLightning size={24} color="rgba(250,246,241,0.7)" strokeWidth={2} />
-            <div style={{ fontSize: 14, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 900, color: "rgba(250,246,241,0.7)" }}>MB</div>
+            <img src={lynetSvg} alt="lightning" style={{ width: 24, height: 24, opacity: 0.7 }} />
+            <img src={mbLightSvg} alt="MB" style={{ width: 28, height: 28, opacity: 0.7 }} />
           </div>
         </PatternTile>
 
@@ -105,16 +107,20 @@ export function PatternSection() {
         <PatternTile bg="#b9bcac" label="ICON SCATTER — On Sage">
           <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
             {[
-              { Icon: IconHydraulic, x: 20, y: 20, rot: -15, op: 0.3 },
-              { Icon: IconPump, x: 80, y: 60, rot: 0, op: 0.2 },
-              { Icon: IconPropeller, x: 160, y: 10, rot: 5, op: 0.3 },
-              { Icon: IconBoat, x: 250, y: 80, rot: 20, op: 0.15 },
-              { Icon: IconCylinder, x: 320, y: 30, rot: -10, op: 0.25 },
-              { Icon: IconHydraulic, x: 60, y: 120, rot: 0, op: 0.2 },
-              { Icon: IconPropeller, x: 200, y: 130, rot: 10, op: 0.2 },
-            ].map(({ Icon, x, y, rot, op }, i) => (
+              { Icon: IconHydraulic, x: 20, y: 20, rot: -15, op: 0.3, type: "icon" },
+              { Icon: IconPump, x: 80, y: 60, rot: 0, op: 0.2, type: "icon" },
+              { Icon: IconPropeller, x: 160, y: 10, rot: 5, op: 0.3, type: "icon" },
+              { Icon: IconBoat, x: 250, y: 80, rot: 20, op: 0.15, type: "icon" },
+              { Icon: IconCylinder, x: 320, y: 30, rot: -10, op: 0.25, type: "icon" },
+              { Icon: IconHydraulic, x: 60, y: 120, rot: 0, op: 0.2, type: "icon" },
+              { Icon: null, x: 200, y: 130, rot: 10, op: 0.2, type: "lightning" },
+            ].map(({ Icon, x, y, rot, op, type }, i) => (
               <div key={i} style={{ position: "absolute", left: x, top: y, transform: `rotate(${rot}deg)`, opacity: op }}>
-                <Icon size={48} color="#10464e" strokeWidth={1.5} />
+                {type === "lightning" ? (
+                  <img src={lynetSvg} alt="lightning" style={{ width: 48, height: 48 }} />
+                ) : (
+                  <Icon size={48} color="#10464e" strokeWidth={1.5} />
+                )}
               </div>
             ))}
           </div>
