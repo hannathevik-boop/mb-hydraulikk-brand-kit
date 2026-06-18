@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import { SectionLabel } from "./BrandSection";
 import { MBHMark } from "./MBHLogo";
-import { IconHydraulic, IconPropeller, IconBoat, IconPump, IconCylinder, IconLightning } from "./MBHIcons";
+import { IconHydraulic, IconPropeller, IconBoat, IconPump, IconCylinder } from "./MBHIcons";
 import lynetSvg from "./ui/svg-logos-test/lynet_.svg";
 import mbLightSvg from "./ui/svg-logos-test/mb-light.svg";
 
@@ -162,15 +162,15 @@ export function PatternSection() {
           { Icon: IconHydraulic, x: 60, y: 120, rot: 0, op: 0.2, type: "icon" },
           { Icon: IconPropeller, x: 220, y: 120, rot: -8, op: 0.22, type: "icon" },
           { Icon: IconPump, x: 300, y: 120, rot: 12, op: 0.18, type: "icon" },
-          { Icon: IconLightning, x: 200, y: 130, rot: 10, op: 0.22, type: "lightning" },
-          { Icon: IconLightning, x: 120, y: 24, rot: -12, op: 0.2, type: "lightning" },
-          { Icon: IconLightning, x: 338, y: 96, rot: 8, op: 0.18, type: "lightning" },
+          { Icon: IconHydraulic, x: 200, y: 130, rot: 10, op: 0.22, type: "lightning" },
+          { Icon: IconHydraulic, x: 120, y: 24, rot: -12, op: 0.2, type: "lightning" },
+          { Icon: IconHydraulic, x: 338, y: 96, rot: 8, op: 0.18, type: "lightning" },
         ].map(({ Icon, x, y, rot, op, type }, i) => {
           const scale = isA4 ? 4.8 : 1;
           return (
             <div key={i} style={{ position: "absolute", left: x * scale, top: y * scale, transform: `rotate(${rot}deg)`, opacity: op }}>
               {type === "lightning" ? (
-                <Icon size={iconSize} color="#641919" strokeWidth={1.8} />
+                <img src={lynetSvg} alt="lightning" style={{ width: iconSize, height: iconSize }} />
               ) : (
                 <Icon size={iconSize} color="#10464e" strokeWidth={1.5} />
               )}
