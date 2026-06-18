@@ -7,6 +7,7 @@ import { UIComponentsSection } from "./components/UIComponentsSection";
 import { MarketingFigures } from "./components/MarketingFigures";
 import { WebsitePreviewSection } from "./components/WebsitePreview";
 import { PatternSection } from "./components/PatternSection";
+import { Button } from "./components/ui/button";
 
 const SECTIONS = [
   { id: "logo", label: "Logo" },
@@ -32,22 +33,31 @@ export default function App() {
     <div style={{ background: "#faf6f1", minHeight: "100vh", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
 
       {/* Header */}
-      <header style={{ background: "#10464e", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
+      <header style={{ background: "#10464E", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
         <MBHLogo variant="full" theme="light" size="sm" />
         <nav style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
           {SECTIONS.map(s => (
-            <button key={s.id} onClick={() => goTo(s.id)} style={{
-              padding: "8px 12px", background: "transparent", border: "1px solid rgba(250,246,241,0.1)", borderRadius: 999,
-              color: active === s.id ? "#faf6f1" : "rgba(250,246,241,0.75)",
-              fontSize: 12, fontWeight: 600, cursor: "pointer",
-            }}>
+            <Button
+              key={s.id}
+              variant={active === s.id ? "default" : "outline"}
+              size="sm"
+              className="px-4 text-[11px] tracking-[0.08em]"
+              style={{ borderRadius: 0 }}
+              onClick={() => goTo(s.id)}
+            >
               {s.label}
-            </button>
+            </Button>
           ))}
         </nav>
-        <button onClick={() => navigate("/preview")} style={{ borderRadius: 999, background: "#641919", color: "#faf6f1", padding: "8px 16px", fontSize: 12, fontWeight: 700, border: "none", cursor: "pointer" }}>
+        <Button
+          variant="destructive"
+          size="sm"
+          className="px-4 text-[11px] tracking-[0.08em]"
+          style={{ borderRadius: 0 }}
+          onClick={() => goTo("website")}
+        >
           Preview demo
-        </button>
+        </Button>
       </header>
 
       {/* Cover */}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SectionLabel } from "./BrandSection";
-import { IconShield, IconGear, IconAnchor, IconWrench, IconShip } from "./MBHIcons";
+import { IconShield, IconWrench, IconHydraulic, IconCrane, IconPropeller } from "./MBHIcons";
 
 function Btn({
   children, variant = "primary", size = "md", icon, disabled = false
@@ -42,6 +42,7 @@ function Btn({
         background: disabled ? "#ede8e1" : hov ? v.hbg : v.bg,
         color: disabled ? "#b9bcac" : v.color,
         border: `1.5px solid ${disabled ? "#ede8e1" : v.border === "transparent" ? "transparent" : v.border}`,
+        borderRadius: 0,
         cursor: disabled ? "not-allowed" : "pointer",
         transition: "all 0.15s",
         opacity: disabled ? 0.6 : 1,
@@ -188,9 +189,9 @@ export function UIComponentsSection() {
       <div>
         <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>SERVICE CARDS</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
-          <Card icon={<IconAnchor size={36} color="#10464e" strokeWidth={1.5} />} tag="Vinsjar" title="Vinsjar & Capstanar" desc="Ankervinsjar, slepevinsjar, trålevinsjar og capstanar i sjøvassbestandig aluminium. Skreddarsydd for fartøyet ditt." />
-          <Card icon={<IconShip size={36} color="#10464e" strokeWidth={1.5} />} tag="Løfteutstyr" title="Kraner & Davitar" desc="MOB-davitar, lastekraner og LARS-system. Kritisk utstyr for redning, last og subsea-operasjonar." />
-          <Card icon={<IconGear size={36} color="#10464e" strokeWidth={1.5} />} tag="Framdrift" title="Sidepropellar" desc="Hydrauliske sidepropellar for presis manøvrering. Kompakt kraft, minimalt vedlikehald, lang levetid." />
+          <Card icon={<IconHydraulic size={36} color="#10464e" strokeWidth={1.5} />} tag="Vinsjar" title="Vinsjar & Capstanar" desc="Ankervinsjar, slepevinsjar, trålevinsjar og capstanar i sjøvassbestandig aluminium. Skreddarsydd for fartøyet ditt." />
+          <Card icon={<IconCrane size={36} color="#10464e" strokeWidth={1.5} />} tag="Løfteutstyr" title="Kraner & Davitar" desc="MOB-davitar, lastekraner og LARS-system. Kritisk utstyr for redning, last og subsea-operasjonar." />
+          <Card icon={<IconPropeller size={36} color="#10464e" strokeWidth={1.5} />} tag="Framdrift" title="Sidepropellar" desc="Hydrauliske sidepropellar for presis manøvrering. Kompakt kraft, minimalt vedlikehald, lang levetid." />
           <Card icon={<IconWrench size={36} color="#10464e" strokeWidth={1.5} />} tag="Service" title="Service & Vedlikehald" desc="Eigne servicefolk med inngåande produktkunnskap. Planlagte oppdrag og rask respons ved behov." />
         </div>
       </div>
