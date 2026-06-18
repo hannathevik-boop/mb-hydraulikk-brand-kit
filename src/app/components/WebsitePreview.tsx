@@ -7,8 +7,8 @@ function NavPreview(): import("react/jsx-runtime").JSX.Element {
     <nav style={{ background: "#10464E", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
       <MBHLogo variant="full" theme="dark" size="md" />
       <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
-        {["PRODUKT", "TENESTER", "KUNDAR", "OM OSS", "KONTAKT"].map(item => (
-          <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, fontSize: 14, letterSpacing: "0.04em", color: "#0a2e35", cursor: "pointer" }}>
+        {["PRODUKT", "TENESTER", "KUNDAR", "OM OSS"].map(item => (
+          <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, fontSize: 14, letterSpacing: "0.04em", color: "#faf6f1", cursor: "pointer" }}>
             {item}
           </span>
         ))}
@@ -35,13 +35,13 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
       <div style={{ position: "relative", zIndex: 1, padding: "80px 80px 60px", maxWidth: 760 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
           <div style={{ width: 32, height: 2, background: "#641919" }} />
-          <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 11, letterSpacing: "0.24em", color: "#b9bcac" }}>
+          <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 11, letterSpacing: "0.24em", color: "#ffffff" }}>
             HYDRAULISK UTSTYR FOR MARITIMT MILJØ · SIDAN 1926
           </span>
         </div>
         <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 64, lineHeight: 1.05, color: "#faf6f1", marginBottom: 28, letterSpacing: "-0.02em" }}>
           Frå Aure<br />
-          <span style={{ color: "#b9bcac" }}>til verdshava.</span>
+          <span style={{ color: "#641919" }}>til verdshava.</span>
         </h1>
         <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 17, color: "rgba(250,246,241,0.65)", lineHeight: 1.7, maxWidth: 520, marginBottom: 48 }}>
           MB Hydraulikk utviklar og produserer vinsjar, kraner, davitar og sidepropellar i sjøvassbestandig aluminium — skreddarsydde for maritimt bruk over heile verda.
