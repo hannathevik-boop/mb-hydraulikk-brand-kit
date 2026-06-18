@@ -20,7 +20,7 @@ export function TypographySection() {
         Typografisk skala — Plus Jakarta Sans
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-      Plus Jakarta Sans er ein moderne, geometrisk sans-serif med god lesbarheit og eit samtidsretta uttrykk. Éin skrifttype med fleire vekter byggjer eit fullt hierarki.
+      Plus Jakarta Sans er ein moderne, geometrisk sans-serif med god lesbarheit og eit samtidsretta uttrykk. Éin skrifttype med fleire vekter byggjer eit fullt hierarki. Benytting av google fonts både på nettsida og i logoen gjer at alle, på tvers av landegrenser, kan få opp både nettside og logo korrekt, utan å måtte laste ned spesifikke fontfiler. 
       </p>
 
       {/* Font weights showcase */}

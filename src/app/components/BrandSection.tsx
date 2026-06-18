@@ -87,10 +87,10 @@ export function LogoSection() {
     <section style={{ padding: "80px 0" }}>
       <SectionLabel>01 — LOGO SYSTEM</SectionLabel>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 8 }}>
-        Brand Identity
+        Merkevareidentitet
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        MB Hydraulikk sitt merke refererer til industriell presisjon og norsk maritim arv — forankra i Mjosundet sidan 1926.
+        EKSEMPEL: MB Hydraulikk sitt merke refererer til industriell presisjon og norsk maritim arv — forankra i Mjosundet sidan 1926. Logoen er teikna for å fungere i mange kontekstar og størrelsar. Fargevariantar for ulike bruksområde og bakgrunnar. Oppdatert slik at den fungerer på alle visuelle digitale flater med ulike bakgrunnar for betre lesbarhet, med universal font, farge og utforming for å imøtekomme krav universell tilgjengelighet. Ingen konflikt mellom font og logo, begge deler er utvikla for å fungere saman og utfylle kvarandre i alle format og medium. Benytting av google fonts gjer at alle, på tvers av landegrenser, kan få opp både nettside og logo korrekt, utan å måtte laste ned spesifikke fontfiler. 
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 16 }}>
         {LOGO_VARIANTS.map((v) => (
