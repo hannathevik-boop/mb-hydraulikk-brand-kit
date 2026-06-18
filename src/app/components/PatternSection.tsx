@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionLabel } from "./BrandSection";
 import { MBHMark } from "./MBHLogo";
-import { IconWave, IconAnchor, IconGear } from "./MBHIcons";
+import { IconWave, IconAnchor, IconGear, IconHydraulic, IconPropeller, IconBoat, IconPump, IconCylinder, IconLightning } from "./MBHIcons";
 
 function PatternTile({ bg, children, label }: { bg: string; children: React.ReactNode; label: string }) {
   return (
@@ -66,10 +66,14 @@ export function PatternSection() {
         {/* Mark watermark */}
         <PatternTile bg="#0a2e35" label="MARK WATERMARK — On Dark">
           <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <MBHMark color="rgba(250,246,241,0.06)" size={280} />
+            <div style={{ position: "relative", width: 280, height: 280, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <IconLightning size={280} color="rgba(250,246,241,0.08)" strokeWidth={1.5} />
+              <div style={{ position: "absolute", fontSize: 120, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 900, color: "rgba(250,246,241,0.06)", letterSpacing: "-0.05em" }}>MB</div>
+            </div>
           </div>
-          <div style={{ position: "absolute", bottom: 20, left: 20 }}>
-            <MBHMark color="rgba(250,246,241,0.7)" size={48} />
+          <div style={{ position: "absolute", bottom: 20, left: 20, display: "flex", alignItems: "center", gap: 6 }}>
+            <IconLightning size={24} color="rgba(250,246,241,0.7)" strokeWidth={2} />
+            <div style={{ fontSize: 14, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 900, color: "rgba(250,246,241,0.7)" }}>MB</div>
           </div>
         </PatternTile>
 
@@ -101,13 +105,13 @@ export function PatternSection() {
         <PatternTile bg="#b9bcac" label="ICON SCATTER — On Sage">
           <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
             {[
-              { Icon: IconAnchor, x: 20, y: 20, rot: -15, op: 0.3 },
-              { Icon: IconGear, x: 80, y: 60, rot: 0, op: 0.2 },
-              { Icon: IconWave, x: 160, y: 10, rot: 5, op: 0.3 },
-              { Icon: IconAnchor, x: 250, y: 80, rot: 20, op: 0.15 },
-              { Icon: IconGear, x: 320, y: 30, rot: -10, op: 0.25 },
-              { Icon: IconWave, x: 60, y: 120, rot: 0, op: 0.2 },
-              { Icon: IconAnchor, x: 200, y: 130, rot: 10, op: 0.2 },
+              { Icon: IconHydraulic, x: 20, y: 20, rot: -15, op: 0.3 },
+              { Icon: IconPump, x: 80, y: 60, rot: 0, op: 0.2 },
+              { Icon: IconPropeller, x: 160, y: 10, rot: 5, op: 0.3 },
+              { Icon: IconBoat, x: 250, y: 80, rot: 20, op: 0.15 },
+              { Icon: IconCylinder, x: 320, y: 30, rot: -10, op: 0.25 },
+              { Icon: IconHydraulic, x: 60, y: 120, rot: 0, op: 0.2 },
+              { Icon: IconPropeller, x: 200, y: 130, rot: 10, op: 0.2 },
             ].map(({ Icon, x, y, rot, op }, i) => (
               <div key={i} style={{ position: "absolute", left: x, top: y, transform: `rotate(${rot}deg)`, opacity: op }}>
                 <Icon size={48} color="#10464e" strokeWidth={1.5} />

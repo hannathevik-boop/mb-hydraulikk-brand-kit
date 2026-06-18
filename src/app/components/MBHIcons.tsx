@@ -268,3 +268,11 @@ export function IconShield({ size = 32, color = "#10464e", strokeWidth = 2, clas
     </svg>
   );
 }
+
+export function IconLightning({ size = 32, color = "#10464e", strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, color, strokeWidth)} className={className}>
+      <polyline points="24,2 14,18 20,18 14,42 34,24 28,24 32,2" fill={color} stroke="none" />
+    </svg>
+  );
+}
