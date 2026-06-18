@@ -4,8 +4,8 @@ import { SectionLabel } from "./BrandSection";
 
 function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
-    <nav style={{ background: "#10464e", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-      <MBHLogo variant="full" theme="dark" size="md" />
+    <nav style={{ background: "#faf6f1", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <MBHLogo variant="full" theme="light" size="md" />
       <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
         {["Produkt", "Tenester", "Kundar", "Om oss", "Kontakt"].map(item => (
           <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, fontSize: 14, letterSpacing: "0.04em", color: "rgba(250,246,241,0.75)", cursor: "pointer" }}>
@@ -109,7 +109,7 @@ function FooterPreview() {
     <footer style={{ background: "#0a2e35", padding: "60px 80px 32px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
         <div>
-          <MBHLogo variant="full" theme="dark" size="md" />
+          <MBHLogo variant="full" theme="light" size="md" />
           <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "rgba(250,246,241,0.5)", marginTop: 16, lineHeight: 1.8, maxWidth: 280 }}>
             MB Hydraulikk AS — hydraulisk utstyr for maritimt miljø sidan 1926. Bygd i Mjosundet, Aure. Lokal kompetanse, global rekkevidde.
           </p>
