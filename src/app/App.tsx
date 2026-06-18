@@ -36,18 +36,24 @@ export default function App() {
       <header style={{ background: "#10464E", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
         <MBHLogo variant="full" theme="light" size="sm" />
         <nav style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
-          {SECTIONS.map(s => (
+          {SECTIONS.map(s => {
+            const isActive = active === s.id;
+
+            return (
             <Button
               key={s.id}
-              variant={active === s.id ? "default" : "outline"}
+              variant="ghost"
               size="sm"
-              className="px-4 text-[11px] tracking-[0.08em]"
-              style={{ borderRadius: 0 }}
+              className="bg-[#10464E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#641919] hover:text-[#faf6f1]"
+              style={{ borderRadius: 0, boxShadow: "none" }}
               onClick={() => goTo(s.id)}
             >
-              {s.label}
+              <span style={{ borderBottom: isActive ? "1px solid #faf6f1" : "1px solid transparent", paddingBottom: 2 }}>
+                {s.label}
+              </span>
             </Button>
-          ))}
+            );
+          })}
         </nav>
         <Button
           variant="destructive"
