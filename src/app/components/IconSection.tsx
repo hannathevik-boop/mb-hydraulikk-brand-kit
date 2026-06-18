@@ -11,7 +11,7 @@ const ICONS = [
   { name: "Valve", component: IconValve },
   { name: "Piston", component: IconPiston },
   { name: "Pressure Gauge", component: IconPressureGauge },
-  { name: "Propeller", component: IconPropeller },
+  { name: "Propel", component: IconPropeller },
   { name: "Wave", component: IconWave },
   { name: "Ship", component: IconShip },
   { name: "Compass", component: IconCompass },
