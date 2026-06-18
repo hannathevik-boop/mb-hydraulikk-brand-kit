@@ -15,12 +15,12 @@ const SCALE = [
 export function TypographySection() {
   return (
     <section style={{ padding: "80px 0" }}>
-      <SectionLabel>03 — TYPOGRAPHY</SectionLabel>
+      <SectionLabel>03 — TYPOGRAFI</SectionLabel>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 8 }}>
-        Type Scale — Plus Jakarta Sans
+        Typografisk skala — Plus Jakarta Sans
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        Plus Jakarta Sans is a contemporary geometric sans-serif with strong legibility and a modern character. Single typeface, multiple weights build full hierarchy.
+      Plus Jakarta Sans er ein moderne, geometrisk sans-serif med god lesbarheit og eit samtidsretta uttrykk. Éin skrifttype med fleire vekter byggjer eit fullt hierarki.
       </p>
 
       {/* Font weights showcase */}

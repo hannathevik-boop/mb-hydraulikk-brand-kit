@@ -45,8 +45,7 @@ export function IconSection() {
             Maritime & Hydraulics Icons
           </h2>
           <p style={{ color: "#858f8f", fontSize: 15, maxWidth: 480 }}>
-            16 custom SVG icons drawn on a 48px grid. 2px stroke, round joins. Built for hydraulikk and maritime industry contexts.
-          </p>
+             20 tilpassa SVG-ikon teikna på eit 48 px rutenett. 2 px strek, avrunda samanføyingar. Utvikla for bruk i hydraulikk- og maritime kontekstar.          </p>
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           {COLOR_VARIANTS.map((cv, i) => (
