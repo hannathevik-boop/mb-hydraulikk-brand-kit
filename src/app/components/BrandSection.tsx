@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { MBHLogo } from "./MBHLogo";
+import React, { useRef, useState } from "react";
+import { MBHLogo, getLogoAsset } from "./MBHLogo";
+import { toPng } from "html-to-image";
 
 const COLORS = [
   { name: "Warm White", hex: "#faf6f1", token: "--mbh-warm", usage: "Background, paper", text: "#10464e" },
@@ -83,6 +84,29 @@ const LOGO_VARIANTS: { variant: "full" | "mark" | "wordmark"; theme: "dark" | "l
 ];
 
 export function LogoSection() {
+  const imgRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const [downloadMenu, setDownloadMenu] = useState<string | null>(null);
+
+  async function downloadPng(key: string) {
+    const el = imgRefs.current[key];
+    if (!el) return;
+    const dataUrl = await toPng(el, { cacheBust: true, pixelRatio: 3 });
+    const link = document.createElement("a");
+    link.download = `mbh-logo-${key.toLowerCase().replace(/\s+/g, "-")}.png`;
+    link.href = dataUrl;
+    link.click();
+    setDownloadMenu(null);
+  }
+
+  function downloadSvg(key: string, variant: "full" | "mark" | "wordmark", theme: "dark" | "light" | "crimson") {
+    const src = getLogoAsset(variant, theme, "lg");
+    const link = document.createElement("a");
+    link.download = `mbh-logo-${key.toLowerCase().replace(/\s+/g, "-")}.svg`;
+    link.href = src;
+    link.click();
+    setDownloadMenu(null);
+  }
+
   return (
     <section style={{ padding: "80px 0" }}>
       <SectionLabel>01 — LOGO SYSTEM</SectionLabel>
@@ -94,16 +118,46 @@ export function LogoSection() {
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 16 }}>
         {LOGO_VARIANTS.map((v) => (
-          <div
-            key={v.label}
-            style={{ background: v.bg, padding: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16, border: "1px solid rgba(16,70,78,0.1)" }}
-          >
-            <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <MBHLogo variant={v.variant} theme={v.theme} size="lg" />
-            </div>
-            <div style={{ fontSize: 11, letterSpacing: "0.12em", color: v.bg === "#faf6f1" ? "#858f8f" : "rgba(255,255,255,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              {v.label}
-            </div>
+          <div key={v.label} style={{ position: "relative" }}>
+            <button
+              type="button"
+              onClick={() => setDownloadMenu(downloadMenu === v.label ? null : v.label)}
+              style={{ width: "100%", background: v.bg, padding: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12, border: "1px solid rgba(16,70,78,0.1)", cursor: "pointer" }}
+            >
+              <div
+                ref={(el) => { imgRefs.current[v.label] = el; }}
+                style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: v.bg, padding: 8 }}
+              >
+                <MBHLogo variant={v.variant} theme={v.theme} size="lg" />
+              </div>
+              <div style={{ fontSize: 11, letterSpacing: "0.12em", color: v.bg === "#faf6f1" ? "#858f8f" : "rgba(255,255,255,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                {v.label}
+              </div>
+              <div style={{ fontSize: 9, letterSpacing: "0.1em", color: v.bg === "#faf6f1" ? "#b9bcac" : "rgba(255,255,255,0.28)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                TRYKK FOR NEDLASTING
+              </div>
+            </button>
+            {downloadMenu === v.label && (
+              <div
+                style={{ position: "absolute", bottom: "100%", left: 0, right: 0, zIndex: 10, background: "#ffffff", border: "1px solid rgba(16,70,78,0.15)", boxShadow: "0 4px 16px rgba(16,70,78,0.12)", marginBottom: 4 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  onClick={() => downloadPng(v.label)}
+                  style={{ width: "100%", padding: "12px 16px", textAlign: "left", background: "transparent", border: "none", borderBottom: "1px solid rgba(16,70,78,0.08)", cursor: "pointer", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 12, fontWeight: 600, color: "#10464e", letterSpacing: "0.06em" }}
+                >
+                  ↓  Last ned PNG
+                </button>
+                <button
+                  type="button"
+                  onClick={() => downloadSvg(v.label, v.variant, v.theme)}
+                  style={{ width: "100%", padding: "12px 16px", textAlign: "left", background: "transparent", border: "none", cursor: "pointer", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 12, fontWeight: 600, color: "#10464e", letterSpacing: "0.06em" }}
+                >
+                  ↓  Last ned SVG
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>

@@ -25,7 +25,7 @@ const sizeMap = {
   xl: 80,
 };
 
-function getLogoAsset(
+export function getLogoAsset(
   variant: "full" | "mark" | "wordmark" = "full",
   theme: "dark" | "light" | "crimson" = "dark",
   size: "sm" | "md" | "lg" | "xl" | number = "md"
