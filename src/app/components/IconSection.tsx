@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { SectionLabel } from "./BrandSection";
 import {
   IconAnchor, IconValve, IconPiston, IconPressureGauge, IconPropeller,
@@ -6,8 +6,6 @@ import {
   IconChain, IconGear, IconPipe, IconHydraulic, IconCylinder, IconPump,
   IconBuoy, IconWrench, IconOilDrop, IconShield
 } from "./MBHIcons";
-
-type DownloadPopover = { name: string; svg: SVGSVGElement } | null;
 
 function downloadSVG(name: string, svgEl: SVGSVGElement) {
   const clone = svgEl.cloneNode(true) as SVGSVGElement;
@@ -87,15 +85,27 @@ const COLOR_VARIANTS = [
 
 export function IconSection() {
   const [activeColor, setActiveColor] = useState(0);
-  const [popover, setPopover] = useState<DownloadPopover>(null);
+  const [downloadMenu, setDownloadMenu] = useState<string | null>(null);
+  const iconRefs = useRef<Record<string, SVGSVGElement | null>>({});
   const cv = COLOR_VARIANTS[activeColor];
 
-  useEffect(() => {
-    if (!popover) return;
-    const handler = () => setPopover(null);
-    document.addEventListener("click", handler);
-    return () => document.removeEventListener("click", handler);
-  }, [popover]);
+  function handleDownloadPng(name: string) {
+    const key = `${name}-${activeColor}`;
+    const svgEl = iconRefs.current[key];
+    if (svgEl) {
+      downloadPNG(name, svgEl);
+    }
+    setDownloadMenu(null);
+  }
+
+  function handleDownloadSvg(name: string) {
+    const key = `${name}-${activeColor}`;
+    const svgEl = iconRefs.current[key];
+    if (svgEl) {
+      downloadSVG(name, svgEl);
+    }
+    setDownloadMenu(null);
+  }
 
   return (
     <section style={{ padding: "80px 0" }}>
@@ -134,98 +144,106 @@ export function IconSection() {
 
       <div
         style={{
-          background: cv.bg,
-          border: "1px solid rgba(16,70,78,0.1)",
-          padding: 40,
-          transition: "background 0.3s",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+          gap: 16,
         }}
       >
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: 8 }}>
-          {ICONS.map(({ name, component: Icon }) => (
-            <div
-              key={name}
-              style={{
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 12,
-                padding: "24px 16px",
-                cursor: "pointer",
-                transition: "background 0.15s",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.06)")}
-              onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-              onClick={(e) => {
-                e.stopPropagation();
-                const svgEl = e.currentTarget.querySelector("svg");
-                if (svgEl) {
-                  setPopover(p => p?.name === name ? null : { name, svg: svgEl as SVGSVGElement });
-                }
-              }}
-            >
-              <Icon size={40} color={cv.color} strokeWidth={2} />
-              <div style={{
-                fontSize: 11,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
-                letterSpacing: "0.08em",
-                color: cv.color,
-                opacity: 0.7,
-                textAlign: "center",
-              }}>
-                {name}
-              </div>
-              {popover?.name === name && (
+        {ICONS.map(({ name, component: Icon }) => {
+          const key = `${name}-${activeColor}`;
+          return (
+            <div key={key} style={{ position: "relative" }}>
+              <button
+                type="button"
+                onClick={() => setDownloadMenu(downloadMenu === name ? null : name)}
+                style={{
+                  width: "100%",
+                  background: cv.bg,
+                  padding: 24,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 12,
+                  border: "1px solid rgba(16,70,78,0.1)",
+                  cursor: "pointer",
+                }}
+              >
                 <div
-                  onClick={e => e.stopPropagation()}
+                  ref={(el) => {
+                    const svgEl = el?.querySelector("svg");
+                    if (svgEl) iconRefs.current[key] = svgEl as SVGSVGElement;
+                  }}
+                  style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: cv.bg, padding: 8 }}
+                >
+                  <Icon size={48} color={cv.color} strokeWidth={2} />
+                </div>
+                <div style={{ fontSize: 11, letterSpacing: "0.12em", color: cv.bg === "#faf6f1" ? "#858f8f" : "rgba(255,255,255,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>
+                  {name}
+                </div>
+                <div style={{ fontSize: 9, letterSpacing: "0.1em", color: cv.bg === "#faf6f1" ? "#b9bcac" : "rgba(255,255,255,0.28)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  TRYKK FOR NEDLASTING
+                </div>
+              </button>
+              {downloadMenu === name && (
+                <div
                   style={{
                     position: "absolute",
-                    top: "calc(100% + 4px)",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    background: "#10464e",
-                    border: "1px solid rgba(185,188,172,0.25)",
-                    padding: "6px",
-                    zIndex: 100,
-                    display: "flex",
-                    gap: 6,
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
-                    whiteSpace: "nowrap",
+                    bottom: "100%",
+                    left: 0,
+                    right: 0,
+                    zIndex: 10,
+                    background: "#ffffff",
+                    border: "1px solid rgba(16,70,78,0.15)",
+                    boxShadow: "0 4px 16px rgba(16,70,78,0.12)",
+                    marginBottom: 4,
                   }}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  {(["SVG", "PNG"] as const).map(fmt => (
-                    <button
-                      key={fmt}
-                      onClick={() => {
-                        fmt === "SVG"
-                          ? downloadSVG(name, popover.svg)
-                          : downloadPNG(name, popover.svg);
-                        setPopover(null);
-                      }}
-                      style={{
-                        background: "transparent",
-                        border: "1px solid rgba(185,188,172,0.4)",
-                        color: "#faf6f1",
-                        padding: "4px 10px",
-                        fontSize: 11,
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        fontWeight: 600,
-                        letterSpacing: "0.1em",
-                        cursor: "pointer",
-                        transition: "background 0.1s",
-                      }}
-                      onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
-                      onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-                    >
-                      {fmt}
-                    </button>
-                  ))}
+                  <button
+                    type="button"
+                    onClick={() => handleDownloadPng(name)}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      textAlign: "left",
+                      background: "transparent",
+                      border: "none",
+                      borderBottom: "1px solid rgba(16,70,78,0.08)",
+                      cursor: "pointer",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      color: "#10464e",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    ↓  Last ned PNG
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDownloadSvg(name)}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      textAlign: "left",
+                      background: "transparent",
+                      border: "none",
+                      cursor: "pointer",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      color: "#10464e",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    ↓  Last ned SVG
+                  </button>
                 </div>
               )}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
       {/* Sizes */}
