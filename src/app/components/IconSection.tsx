@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import JSZip from "jszip";
 import { SectionLabel } from "./BrandSection";
 import {
   IconAnchor, IconValve, IconPiston, IconPressureGauge, IconPropeller,
@@ -52,6 +53,32 @@ function downloadPNG(name: string, svgEl: SVGSVGElement) {
   img.src = url;
 }
 
+function svgToCanvas(svgEl: SVGSVGElement, size: number, color: string): Promise<Blob> {
+  return new Promise((resolve) => {
+    const clone = svgEl.cloneNode(true) as SVGSVGElement;
+    clone.setAttribute("width", String(size));
+    clone.setAttribute("height", String(size));
+    clone.setAttribute("stroke", color);
+    clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const svgString = new XMLSerializer().serializeToString(clone);
+    const blob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext("2d")!;
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      canvas.toBlob(pngBlob => {
+        if (pngBlob) resolve(pngBlob);
+      });
+    };
+    img.src = url;
+  });
+}
+
 const ICONS = [
   { name: "Anchor", component: IconAnchor },
   { name: "Valve", component: IconValve },
@@ -86,7 +113,9 @@ const COLOR_VARIANTS = [
 export function IconSection() {
   const [activeColor, setActiveColor] = useState(0);
   const [downloadMenu, setDownloadMenu] = useState<string | null>(null);
+  const [isGeneratingZip, setIsGeneratingZip] = useState(false);
   const iconRefs = useRef<Record<string, SVGSVGElement | null>>({});
+  const bannerRef = useRef<HTMLDivElement>(null);
   const cv = COLOR_VARIANTS[activeColor];
 
   function handleDownloadPng(name: string) {
@@ -107,6 +136,101 @@ export function IconSection() {
     setDownloadMenu(null);
   }
 
+  async function downloadAllIconsZip() {
+    setIsGeneratingZip(true);
+    const zip = new JSZip();
+
+    for (const variant of COLOR_VARIANTS) {
+      const folderName = variant.label.toLowerCase().replace(/\s+/g, "-");
+      const svgFolder = zip.folder(`${folderName}/svg`);
+      const pngFolder = zip.folder(`${folderName}/png`);
+
+      for (const icon of ICONS) {
+        const key = `${icon.name}-${COLOR_VARIANTS.indexOf(variant)}`;
+        const svgEl = iconRefs.current[key];
+        if (!svgEl) continue;
+
+        // SVG
+        const clone = svgEl.cloneNode(true) as SVGSVGElement;
+        clone.setAttribute("width", "48");
+        clone.setAttribute("height", "48");
+        clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        const svgString = new XMLSerializer().serializeToString(clone);
+        svgFolder?.file(
+          `${icon.name.toLowerCase().replace(/\s+/g, "-")}.svg`,
+          svgString
+        );
+
+        // PNG
+        const pngBlob = await svgToCanvas(svgEl, 192, variant.color);
+        pngFolder?.file(
+          `${icon.name.toLowerCase().replace(/\s+/g, "-")}.png`,
+          pngBlob
+        );
+      }
+    }
+
+    const blob = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "mbh-icon-set.zip";
+    a.click();
+    URL.revokeObjectURL(url);
+    setIsGeneratingZip(false);
+  }
+
+  async function downloadBannerSheet() {
+    if (!bannerRef.current) return;
+    const canvas = await new Promise<HTMLCanvasElement>((resolve) => {
+      const link = document.createElement("a");
+      link.href = "";
+      const rect = bannerRef.current!.getBoundingClientRect();
+      const tempCanvas = document.createElement("canvas");
+      tempCanvas.width = rect.width * 2;
+      tempCanvas.height = rect.height * 2;
+      const ctx = tempCanvas.getContext("2d")!;
+      ctx.scale(2, 2);
+      ctx.fillStyle = "#10464e";
+      ctx.fillRect(0, 0, rect.width, rect.height);
+      
+      const svgs = bannerRef.current!.querySelectorAll("svg");
+      const promises: Promise<void>[] = [];
+      
+      svgs.forEach((svg, idx) => {
+        const promise = new Promise<void>((res) => {
+          const svgString = new XMLSerializer().serializeToString(svg);
+          const svgBlob = new Blob([svgString], { type: "image/svg+xml" });
+          const url = URL.createObjectURL(svgBlob);
+          const img = new Image();
+          img.onload = () => {
+            const rect = svg.getBoundingClientRect();
+            const bannerRect = bannerRef.current!.getBoundingClientRect();
+            const x = (rect.left - bannerRect.left) * 2;
+            const y = (rect.top - bannerRect.top) * 2;
+            ctx.drawImage(img, x, y, rect.width * 2, rect.height * 2);
+            URL.revokeObjectURL(url);
+            res();
+          };
+          img.src = url;
+        });
+        promises.push(promise);
+      });
+      
+      Promise.all(promises).then(() => resolve(tempCanvas));
+    });
+
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "mbh-icon-set-banner.png";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
+
   return (
     <section style={{ padding: "80px 0" }}>
       <SectionLabel>04 — ICON SET</SectionLabel>
@@ -118,27 +242,105 @@ export function IconSection() {
           <p style={{ color: "#858f8f", fontSize: 15, maxWidth: 480 }}>
              20 tilpassa SVG-ikon teikna på eit 48 px rutenett. 2 px strek, avrunda samanføyingar. Utvikla for bruk i hydraulikk- og maritime kontekstar.          </p>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
-          {COLOR_VARIANTS.map((cv, i) => (
+        <div style={{ display: "flex", gap: 8, flexDirection: "column", alignItems: "flex-end" }}>
+          <div style={{ display: "flex", gap: 8 }}>
+            {COLOR_VARIANTS.map((cv, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveColor(i)}
+                style={{
+                  background: cv.bg,
+                  border: activeColor === i ? `2px solid #641919` : "2px solid rgba(16,70,78,0.2)",
+                  padding: "6px 14px",
+                  fontSize: 11,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 600,
+                  letterSpacing: "0.1em",
+                  color: cv.bg === "#faf6f1" ? "#10464e" : "#faf6f1",
+                  cursor: "pointer",
+                  transition: "all 0.15s",
+                }}
+              >
+                {cv.label}
+              </button>
+            ))}
+          </div>
+          <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
             <button
-              key={i}
-              onClick={() => setActiveColor(i)}
+              onClick={downloadAllIconsZip}
+              disabled={isGeneratingZip}
               style={{
-                background: cv.bg,
-                border: activeColor === i ? `2px solid #641919` : "2px solid rgba(16,70,78,0.2)",
-                padding: "6px 14px",
-                fontSize: 11,
+                background: "transparent",
+                border: "1px solid #641919",
+                padding: "6px 12px",
+                fontSize: 10,
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontWeight: 600,
                 letterSpacing: "0.1em",
-                color: cv.bg === "#faf6f1" ? "#10464e" : "#faf6f1",
+                color: "#641919",
+                cursor: isGeneratingZip ? "wait" : "pointer",
+                transition: "all 0.15s",
+                opacity: isGeneratingZip ? 0.6 : 1,
+              }}
+              onMouseEnter={e => !isGeneratingZip && (e.currentTarget.style.background = "rgba(100,25,25,0.08)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+            >
+              {isGeneratingZip ? "Genererer..." : "↓ Alle ikon (ZIP)"}
+            </button>
+            <button
+              onClick={downloadBannerSheet}
+              style={{
+                background: "transparent",
+                border: "1px solid #641919",
+                padding: "6px 12px",
+                fontSize: 10,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: 600,
+                letterSpacing: "0.1em",
+                color: "#641919",
                 cursor: "pointer",
                 transition: "all 0.15s",
               }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(100,25,25,0.08)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
             >
-              {cv.label}
+              ↓ Banner (PNG)
             </button>
-          ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Banner Preview (Hidden) */}
+      <div
+        ref={bannerRef}
+        style={{
+          display: "none",
+          background: "#10464e",
+          padding: "40px",
+          width: "1200px",
+          minHeight: "400px",
+          position: "absolute",
+        }}
+      >
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 20, marginBottom: 40 }}>
+          {ICONS.map(({ name, component: Icon }) => {
+            const key = `${name}-1`;
+            return (
+              <div key={key} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+                <div
+                  ref={(el) => {
+                    const svgEl = el?.querySelector("svg");
+                    if (svgEl) iconRefs.current[key] = svgEl as SVGSVGElement;
+                  }}
+                >
+                  <Icon size={60} color="#faf6f1" strokeWidth={2} />
+                </div>
+                <div style={{ fontSize: 10, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", textAlign: "center" }}>
+                  {name}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
