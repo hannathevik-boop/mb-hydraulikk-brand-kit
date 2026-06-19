@@ -6,6 +6,7 @@ import mbLightSvg from "./ui/svg-logos-test/mbh-blaa.svg";
 import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
 import smallDarkSvg from "./ui/svg-logos-test/small-dark.svg";
 import smallLightSvg from "./ui/svg-logos-test/small-light.svg";
+import mbhSvartSvg from "./ui/svg-logos-test/mbh-svart.svg";
 import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
 import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
 
@@ -30,7 +31,7 @@ function getLogoAsset(
   size: "sm" | "md" | "lg" | "xl" | number = "md"
 ): string {
   if (variant === "mark") {
-    return theme === "light" ? smallLightSvg : smallDarkSvg;
+    return theme === "light" ? bigBlackSvg : mbhSvartSvg;
   }
 
   if (variant === "wordmark") {
