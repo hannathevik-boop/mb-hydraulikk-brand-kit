@@ -4,7 +4,7 @@ import { SectionLabel } from "./BrandSection";
 import { MBHMark } from "./MBHLogo";
 import { IconHydraulic, IconPropeller, IconBoat, IconPump, IconCylinder } from "./MBHIcons";
 import lynetSvg from "./ui/svg-logos-test/lynet_.svg";
-import mbLightSvg from "./ui/svg-logos-test/mb-light.svg";
+import mbLightSvg from "./ui/svg-logos-test/mbh-blaa.svg";
 
 type PatternKey = "hex" | "wave" | "watermark" | "grid" | "hatch" | "scatter";
 
