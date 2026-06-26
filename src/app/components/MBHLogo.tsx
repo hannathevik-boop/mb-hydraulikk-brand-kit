@@ -1,12 +1,9 @@
-import bigBlackSvg from "./ui/logos_test_2/mbh_stor_svart.svg";
 import bigDarkSvg from "./ui/logos_test_2/mbh_stor_blaa.svg";
 import bigLightSvg from "./ui/logos_test_2/mbh_stor_hvit.svg";
 import mbDarkSvg from "./ui/logos_test_2/mbh_hvit.svg";
 import mbLightSvg from "./ui/logos_test_2/mbh_bla.svg";
-import smallBlackSvg from "./ui/logos_test_2/small_black.svg";
 import smallDarkSvg from "./ui/logos_test_2/small_blaa.svg";
 import smallLightSvg from "./ui/logos_test_2/small_hvit.svg";
-import mbhSvartSvg from "./ui/logos_test_2/mbh_svart.svg";
 import midSmallDarkSvg from "./ui/logos_test_2/mid_small_blue.svg";
 import midSmallLightSvg from "./ui/logos_test_2/mid_small_hvit.svg";
 
@@ -31,7 +28,7 @@ export function getLogoAsset(
   size: "sm" | "md" | "lg" | "xl" | number = "md"
 ): string {
   if (variant === "mark") {
-    return theme === "light" ? bigBlackSvg : mbhSvartSvg;
+    return theme === "dark" ? mbDarkSvg : mbLightSvg;
   }
 
   if (variant === "wordmark") {
@@ -41,18 +38,18 @@ export function getLogoAsset(
   // Full logo
   if (size === "sm" || size === "md") {
     return theme === "light"
-      ? smallLightSvg
+      ? smallDarkSvg
       : theme === "crimson"
-        ? smallDarkSvg
-        : smallDarkSvg;
+        ? smallLightSvg
+        : smallLightSvg;
   }
 
   // lg and xl sizes
   return theme === "light"
-    ? bigLightSvg
+    ? bigDarkSvg
     : theme === "crimson"
-      ? bigDarkSvg
-      : bigDarkSvg;
+      ? bigLightSvg
+      : bigLightSvg;
 }
 
 export function MBHMark({
