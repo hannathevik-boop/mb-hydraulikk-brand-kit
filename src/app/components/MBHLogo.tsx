@@ -1,14 +1,14 @@
-import bigBlackSvg from "./ui/svg-logos-test/big-black.svg";
-import bigDarkSvg from "./ui/svg-logos-test/big-dark.svg";
-import bigLightSvg from "./ui/svg-logos-test/big-light.svg";
-import mbDarkSvg from "./ui/svg-logos-test/mbh-hvit.svg";
-import mbLightSvg from "./ui/svg-logos-test/mbh-blaa.svg";
-import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
-import smallDarkSvg from "./ui/svg-logos-test/small-dark.svg";
-import smallLightSvg from "./ui/svg-logos-test/small-light.svg";
-import mbhSvartSvg from "./ui/svg-logos-test/mbh-svart.svg";
-import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
-import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
+import bigBlackSvg from "./ui/logos_test_2/mbh_stor_svart.svg";
+import bigDarkSvg from "./ui/logos_test_2/mbh_stor_blaa.svg";
+import bigLightSvg from "./ui/logos_test_2/mbh_stor_hvit.svg";
+import mbDarkSvg from "./ui/logos_test_2/mbh_hvit.svg";
+import mbLightSvg from "./ui/logos_test_2/mbh_bla.svg";
+import smallBlackSvg from "./ui/logos_test_2/small_black.svg";
+import smallDarkSvg from "./ui/logos_test_2/small_blaa.svg";
+import smallLightSvg from "./ui/logos_test_2/small_hvit.svg";
+import mbhSvartSvg from "./ui/logos_test_2/mbh_svart.svg";
+import midSmallDarkSvg from "./ui/logos_test_2/mid_small_blue.svg";
+import midSmallLightSvg from "./ui/logos_test_2/mid_small_hvit.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
