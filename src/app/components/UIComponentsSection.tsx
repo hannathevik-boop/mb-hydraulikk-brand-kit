@@ -123,7 +123,7 @@ function Card({ title, tag, desc, icon }: { title: string; tag: string; desc: st
       }}
     >
       <div style={{ marginBottom: 20 }}>{icon}</div>
-      <Badge label={tag} variant="outline" />
+      <Badge label={tag} variant="bauxite" />
       <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 18, color: "#10464e", marginTop: 12, marginBottom: 8 }}>{title}</h3>
       <p style={{ fontSize: 14, color: "#858f8f", lineHeight: 1.6 }}>{desc}</p>
       <div style={{ marginTop: 20, display: "flex", alignItems: "center", gap: 6 }}>

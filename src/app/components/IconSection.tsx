@@ -194,7 +194,7 @@ export function IconSection() {
                 onClick={() => setActiveColor(i)}
                 style={{
                   background: cv.bg,
-                  border: activeColor === i ? `2px solid #A84F2E` : "2px solid rgba(16,70,78,0.2)",
+                  border: cv.bg === "#A84F2E" ? "2px solid transparent" : (activeColor === i ? `2px solid #A84F2E` : "2px solid rgba(16,70,78,0.2)"),
                   padding: "6px 14px",
                   fontSize: 11,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",

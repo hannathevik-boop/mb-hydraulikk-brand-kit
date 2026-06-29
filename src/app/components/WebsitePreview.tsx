@@ -124,9 +124,9 @@ function ServicesPreview(): import("react/jsx-runtime").JSX.Element {
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              background: "transparent",
-              color: "#10464e",
-              border: "1px solid #10464e",
+              background: "#A84F2E",
+              color: "#faf6f1",
+              border: "none",
               marginBottom: 12
             }}>{s.tag}</span>
             <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 17, color: "#10464e", marginBottom: 10 }}>{s.title}</h3>
