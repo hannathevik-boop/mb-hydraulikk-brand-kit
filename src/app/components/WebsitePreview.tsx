@@ -52,7 +52,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
           <div style={{ background: "#8C3F26", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
             SJÅ PRODUKT
           </div>
-          <div style={{ border: "1.5px solid rgba(250,246,241,0.3)", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
+          <div style={{ background: "#10464e", border: "1.5px solid #1a6070", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
             TA KONTAKT
           </div>
         </div>
