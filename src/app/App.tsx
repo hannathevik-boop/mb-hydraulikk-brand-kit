@@ -44,7 +44,7 @@ export default function App() {
               key={s.id}
               variant="ghost"
               size="sm"
-              className="bg-[#10464E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#641919] hover:text-[#faf6f1]"
+              className="bg-[#10464E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#8C3F26] hover:text-[#faf6f1]"
               style={{ borderRadius: 0, boxShadow: "none" }}
               onClick={() => goTo(s.id)}
             >
@@ -56,10 +56,10 @@ export default function App() {
           })}
         </nav>
         <Button
-          variant="destructive"
+          variant="ghost"
           size="sm"
-          className="px-4 text-[11px] tracking-[0.08em]"
-          style={{ borderRadius: 0 }}
+          className="bg-[#8C3F26] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#73331f] hover:text-[#faf6f1]"
+          style={{ borderRadius: 0, boxShadow: "none" }}
           onClick={() => goTo("website")}
         >
           Preview demo
@@ -69,7 +69,7 @@ export default function App() {
       {/* Cover */}
       <div style={{ background: "#10464e", padding: "60px clamp(20px, 6vw, 80px) 80px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40, flexWrap: "wrap" }}>
-          <div style={{ width: 48, height: 2, background: "#641919" }} />
+          <div style={{ width: 48, height: 2, background: "#8C3F26" }} />
           <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.24em", color: "#FAF6F1" }}>
             VISUELL IDENTITET · mbh.no · MJOSUNDET, AURE
           </span>

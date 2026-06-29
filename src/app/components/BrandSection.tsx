@@ -6,6 +6,7 @@ const COLORS = [
   { name: "Warm White", hex: "#faf6f1", token: "--mbh-warm", usage: "Background, paper", text: "#10464e" },
   { name: "Deep Teal", hex: "#10464e", token: "--mbh-teal", usage: "Primary, headings, navy", text: "#faf6f1" },
   { name: "Crimson", hex: "#641919", token: "--mbh-crimson", usage: "Accent, CTA, alert", text: "#faf6f1" },
+  { name: "Bauxite", hex: "#8C3F26", token: "--mbh-bauxite", usage: "Warm accent, highlights", text: "#faf6f1" },
   { name: "Sage", hex: "#b9bcac", token: "--mbh-sage", usage: "Secondary, dividers", text: "#10464e" },
   { name: "Slate", hex: "#858f8f", token: "--mbh-slate", usage: "Body text, labels", text: "#faf6f1" },
   { name: "Teal Light", hex: "#1a6070", token: "--mbh-teal-light", usage: "Hover, links, mid", text: "#faf6f1" },
