@@ -14,7 +14,7 @@ function Btn({
   const sizes = { sm: { px: 16, py: 8, fs: 12 }, md: { px: 24, py: 12, fs: 14 }, lg: { px: 32, py: 16, fs: 16 } };
   const s = sizes[size];
   const variants = {
-    primary: { bg: "#8C3F26", color: "#faf6f1", border: "transparent", hbg: "#73331f" },
+    primary: { bg: "#A84F2E", color: "#faf6f1", border: "transparent", hbg: "#73331f" },
     secondary: { bg: "#10464e", color: "#faf6f1", border: "transparent", hbg: "#1a6070" },
     outline: { bg: "transparent", color: "#10464e", border: "#10464e", hbg: "#f0ece6" },
     ghost: { bg: "transparent", color: "#858f8f", border: "transparent", hbg: "#ede8e1" },

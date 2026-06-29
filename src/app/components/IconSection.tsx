@@ -80,7 +80,7 @@ const ICONS = [
 const COLOR_VARIANTS = [
   { bg: "#faf6f1", color: "#10464e", label: "On Warm" },
   { bg: "#10464e", color: "#faf6f1", label: "On Teal" },
-  { bg: "#8C3F26", color: "#faf6f1", label: "On Bauxite" },
+  { bg: "#A84F2E", color: "#faf6f1", label: "On Bauxite" },
   { bg: "#641919", color: "#faf6f1", label: "On Crimson" },
   { bg: "#0a2e35", color: "#faf6f1", label: "On Dark" },
 ];
@@ -194,7 +194,7 @@ export function IconSection() {
                 onClick={() => setActiveColor(i)}
                 style={{
                   background: cv.bg,
-                  border: activeColor === i ? `2px solid #8C3F26` : "2px solid rgba(16,70,78,0.2)",
+                  border: activeColor === i ? `2px solid #A84F2E` : "2px solid rgba(16,70,78,0.2)",
                   padding: "6px 14px",
                   fontSize: 11,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",

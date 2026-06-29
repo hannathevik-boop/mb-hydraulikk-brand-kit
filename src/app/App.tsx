@@ -58,7 +58,7 @@ export default function App() {
         <Button
           variant="ghost"
           size="sm"
-          className="bg-[#A84F2E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#8C3F26] hover:text-[#faf6f1]"
+          className="bg-[#A84F2E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#73331f] hover:text-[#faf6f1]"
           style={{ borderRadius: 0, boxShadow: "none" }}
           onClick={() => goTo("website")}
         >
