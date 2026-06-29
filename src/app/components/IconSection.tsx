@@ -82,7 +82,7 @@ const COLOR_VARIANTS = [
   { bg: "#10464e", color: "#faf6f1", label: "On Teal" },
   { bg: "#8C3F26", color: "#faf6f1", label: "On Bauxite" },
   { bg: "#641919", color: "#faf6f1", label: "On Crimson" },
-  { bg: "#0a2e35", color: "#b9bcac", label: "On Dark" },
+  { bg: "#0a2e35", color: "#faf6f1", label: "On Dark" },
 ];
 
 export function IconSection() {

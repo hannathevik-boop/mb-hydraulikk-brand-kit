@@ -219,7 +219,7 @@ export function PatternSection() {
         </PatternTile>
 
         {/* Icon scatter */}
-        <PatternTile bg="#b9bcac" label="ICON SCATTER — On Sage" onClick={() => setSelectedPattern("scatter")}>
+        <PatternTile bg="#a84f2e" label="ICON SCATTER — On Bauxite" onClick={() => setSelectedPattern("scatter")}>
           {renderPatternContent("scatter", "tile")}
         </PatternTile>
 
@@ -291,7 +291,7 @@ export function PatternSection() {
                           ? "#641919"
                           : selectedPattern === "hatch"
                             ? "#ede8e1"
-                            : "#b9bcac",
+                            : "#a84f2e",
               }}
             >
               {renderPatternContent(selectedPattern, "a4")}

@@ -14,7 +14,7 @@ function NavPreview(): import("react/jsx-runtime").JSX.Element {
           </span>
         ))}
         <span style={{
-          background: "#8C3F26", color: "#faf6f1",
+          background: "#A84F2E", color: "#faf6f1",
           fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 12,
           letterSpacing: "0.1em", padding: "8px 20px", cursor: "pointer",
           whiteSpace: "nowrap"
@@ -36,7 +36,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
       />
       <div style={{ position: "relative", zIndex: 1, padding: "80px clamp(16px, 5vw, 80px) 60px", maxWidth: 760, width: "100%" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32, flexWrap: "wrap" }}>
-          <div style={{ width: 32, height: 2, background: "#8C3F26" }} />
+          <div style={{ width: 32, height: 2, background: "#A84F2E" }} />
           <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 11, letterSpacing: "0.24em", color: "#ffffff" }}>
             HYDRAULISK UTSTYR FOR MARITIMT MILJØ · SIDAN 1926
           </span>
@@ -49,7 +49,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
           MB Hydraulikk utviklar og produserer vinsjar, kraner, davitar og sidepropellar i sjøvassbestandig aluminium — skreddarsydde for maritimt bruk over heile verda.
         </p>
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-          <div style={{ background: "#8C3F26", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
+          <div style={{ background: "#A84F2E", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
             SJÅ PRODUKT
           </div>
           <div style={{ background: "#10464e", border: "1.5px solid #1a6070", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
@@ -89,8 +89,8 @@ function ServicesPreview(): import("react/jsx-runtime").JSX.Element {
   return (
     <div style={{ background: "#faf6f1", padding: "80px clamp(16px, 5vw, 80px)" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
-        <div style={{ width: 32, height: 2, background: "#8C3F26" }} />
-        <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 11, letterSpacing: "0.24em", color: "#8C3F26" }}>PRODUKTOMRÅDE</span>
+        <div style={{ width: 32, height: 2, background: "#A84F2E" }} />
+        <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 11, letterSpacing: "0.24em", color: "#A84F2E" }}>PRODUKTOMRÅDE</span>
       </div>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 40, color: "#10464e", marginBottom: 48, letterSpacing: "-0.01em" }}>
         Kompetanse som leverer
@@ -106,7 +106,7 @@ function ServicesPreview(): import("react/jsx-runtime").JSX.Element {
             onMouseLeave={() => setHoveredCard(null)}
             style={{
               background: "#ffffff",
-              border: `1px solid ${isHovered ? "#8C3F26" : "rgba(16,70,78,0.12)"}`,
+              border: `1px solid ${isHovered ? "#A84F2E" : "rgba(16,70,78,0.12)"}`, 
               padding: 32,
               borderRadius: 0,
               minWidth: 0,
@@ -155,7 +155,7 @@ function FooterPreview() {
           { title: "SELSKAP", items: ["Om MB Hydraulikk", "Kundar", "Utvikling", "Service", "Kontakt"] },
         ].map(col => (
           <div key={col.title}>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", color: "#8C3F26", marginBottom: 20 }}>{col.title}</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", color: "#A84F2E", marginBottom: 20 }}>{col.title}</div>
             {col.items.map(item => (
               <div key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "rgba(250,246,241,0.55)", marginBottom: 10 }}>{item}</div>
             ))}

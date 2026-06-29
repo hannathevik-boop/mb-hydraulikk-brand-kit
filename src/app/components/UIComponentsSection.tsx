@@ -40,7 +40,7 @@ function Btn({
         fontWeight: 600,
         letterSpacing: "0.06em",
         background: disabled ? "#ede8e1" : hov ? v.hbg : v.bg,
-        color: disabled ? "#b9bcac" : v.color,
+          color: disabled ? "#858f8f" : v.color,
         border: `1.5px solid ${disabled ? "#ede8e1" : v.border === "transparent" ? "transparent" : v.border}`,
         borderRadius: 0,
         cursor: disabled ? "not-allowed" : "pointer",
@@ -54,12 +54,12 @@ function Btn({
   );
 }
 
-function Badge({ label, variant = "teal" }: { label: string; variant?: "teal" | "crimson" | "sage" | "slate" | "outline" }) {
+function Badge({ label, variant = "teal" }: { label: string; variant?: "teal" | "crimson" | "bauxite" | "alu" | "outline" }) {
   const v = {
     teal: { bg: "#10464e", color: "#faf6f1" },
     crimson: { bg: "#641919", color: "#faf6f1" },
-    sage: { bg: "#b9bcac", color: "#10464e" },
-    slate: { bg: "#858f8f", color: "#faf6f1" },
+    bauxite: { bg: "#a84f2e", color: "#faf6f1" },
+    alu: { bg: "#858f8f", color: "#faf6f1" },
     outline: { bg: "transparent", color: "#10464e", border: "#10464e" },
   }[variant];
   return (
@@ -166,11 +166,11 @@ export function UIComponentsSection() {
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
           <Badge label="Hydraulikk" variant="teal" />
           <Badge label="Maritim" variant="crimson" />
-          <Badge label="Offshore" variant="sage" />
-          <Badge label="Industri" variant="slate" />
+          <Badge label="Offshore" variant="bauxite" />
+          <Badge label="Industri" variant="alu" />
           <Badge label="Sertifisert" variant="outline" />
           <Badge label="ISO 9001" variant="teal" />
-          <Badge label="Tilgjengelig" variant="sage" />
+          <Badge label="Tilgjengelig" variant="bauxite" />
         </div>
       </div>
 

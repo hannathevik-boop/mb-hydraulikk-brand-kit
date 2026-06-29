@@ -13,7 +13,7 @@ const barData = [
 const pieData = [
   { name: "Fiskeri/Oppdrett", pct: 38, color: "#10464e" },
   { name: "Seismikk/Subsea", pct: 26, color: "#641919" },
-  { name: "Forsvar/Forsking", pct: 20, color: "#b9bcac" },
+  { name: "Forsvar/Forsking", pct: 20, color: "#a84f2e" },
   { name: "Verft/Anna", pct: 16, color: "#858f8f" },
 ];
 
