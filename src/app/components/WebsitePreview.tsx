@@ -68,11 +68,13 @@ function NewsPreview(): import("react/jsx-runtime").JSX.Element {
                 transform: isHovered ? "translateY(-2px)" : "none",
               }}
             >
-              <img
-                src={item.image}
-                alt={item.alt}
-                style={{ width: "100%", height: "100%", minHeight: 170, objectFit: "cover" }}
-              />
+              <div style={{ padding: "12px 0 12px 12px" }}>
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  style={{ width: "100%", height: "100%", minHeight: 170, objectFit: "cover" }}
+                />
+              </div>
               <div style={{ padding: 22, display: "flex", flexDirection: "column" }}>
                 <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 19, color: "#10464e", lineHeight: 1.25, marginBottom: 10 }}>{item.title}</h3>
                 <p style={{ fontSize: 14, color: "#858f8f", lineHeight: 1.65 }}>{item.desc}</p>
