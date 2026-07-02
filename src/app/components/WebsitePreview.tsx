@@ -5,7 +5,7 @@ import { SectionLabel } from "./BrandSection";
 
 function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
-    <nav style={{ background: "#10464E", padding: "16px clamp(16px, 5vw, 48px)", minHeight: 72, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+    <nav style={{ background: "#0a2e35", padding: "16px clamp(16px, 5vw, 48px)", minHeight: 72, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
       <MBHLogo variant="full" theme="light" size="md" />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center", justifyContent: "flex-end" }}>
         {["Produkt", "Tenester", "Kunder", "Om oss"].map(item => (
@@ -23,6 +23,69 @@ function NavPreview(): import("react/jsx-runtime").JSX.Element {
         </span>
       </div>
     </nav>
+  );
+}
+
+function NewsPreview(): import("react/jsx-runtime").JSX.Element {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const news = [
+    {
+      id: "n1",
+      title: "MB Hydraulikk markerer 100 år i 2026",
+      desc: "Jubileumsåret blir markert med historisk tilbakeblikk, kundehistorier og fokus på vidare utvikling frå Mjosundet.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop&auto=format",
+      alt: "Møte med tekniske teikningar",
+    },
+    {
+      id: "n2",
+      title: "Ny leveranse til maritimt prosjekt",
+      desc: "Skreddarsydd hydraulikkløysing med lågt vedlikehaldsbehov er levert til internasjonalt fartøy i operativ drift.",
+      image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&h=600&fit=crop&auto=format",
+      alt: "Maritimt fartøy i hamn",
+    },
+  ];
+
+  return (
+    <div style={{ background: "#faf6f1", padding: "0 clamp(16px, 5vw, 80px) 80px" }}>
+      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV NYHENDE-PREVIEW</div>
+      <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 20 }}>Siste nyhende</div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: 16 }}>
+        {news.map((item) => {
+          const isHovered = hoveredCard === item.id;
+
+          return (
+            <article
+              key={item.id}
+              onMouseEnter={() => setHoveredCard(item.id)}
+              onMouseLeave={() => setHoveredCard(null)}
+              style={{
+                background: "#ffffff",
+                border: `1px solid ${isHovered ? "#A84F2E" : "rgba(16,70,78,0.12)"}`,
+                display: "grid",
+                gridTemplateColumns: "minmax(170px, 220px) 1fr",
+                minWidth: 0,
+                transition: "border-color 0.2s, transform 0.2s",
+                transform: isHovered ? "translateY(-2px)" : "none",
+              }}
+            >
+              <img
+                src={item.image}
+                alt={item.alt}
+                style={{ width: "100%", height: "100%", minHeight: 170, objectFit: "cover" }}
+              />
+              <div style={{ padding: 22, display: "flex", flexDirection: "column" }}>
+                <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 19, color: "#10464e", lineHeight: 1.25, marginBottom: 10 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: "#858f8f", lineHeight: 1.65 }}>{item.desc}</p>
+                <div style={{ marginTop: "auto", paddingTop: 16, display: "flex", alignItems: "center", gap: 6 }}>
+                  <span style={{ fontSize: 12, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, color: "#641919", letterSpacing: "0.06em" }}>Les mer</span>
+                  <span style={{ color: "#641919", fontSize: 16 }}>→</span>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -188,6 +251,7 @@ export function WebsitePreviewSection() {
         <NavPreview />
         <HeroPreview />
         <ServicesPreview />
+        <NewsPreview />
         <FooterPreview />
       </div>
     </section>

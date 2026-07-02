@@ -137,6 +137,24 @@ function Card({ title, tag, desc, icon }: { title: string; tag: string; desc: st
 }
 
 export function UIComponentsSection() {
+  const [hoveredNews, setHoveredNews] = useState<string | null>(null);
+  const newsItems = [
+    {
+      id: "k1",
+      title: "MB Hydraulikk markerer 100 år i 2026",
+      desc: "Jubileumsåret markeres med historisk tilbakeblikk, kundecaser og ny satsing på digitale produktopplevelser.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop&auto=format",
+      alt: "Møte med tekniske tegninger",
+    },
+    {
+      id: "k2",
+      title: "Ny leveranse til maritimt prosjekt",
+      desc: "Skreddersydd hydraulikkløsning med lavt vedlikeholdsbehov er levert til internasjonalt fartøy i operativ drift.",
+      image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&h=600&fit=crop&auto=format",
+      alt: "Maritimt fartøy ved kai",
+    },
+  ];
+
   return (
     <section style={{ padding: "80px 0" }}>
       <SectionLabel>05 — UI KOMPONENTER</SectionLabel>
@@ -197,6 +215,48 @@ export function UIComponentsSection() {
           <Card icon={<IconGear size={36} color="#10464e" strokeWidth={1.5} />} tag="LARS" title="LARS & Systemløysingar" desc="Komplette Launch and Recovery System og skreddarsydde systemløysingar for seismikk, subsea og forsvar." />
           <Card icon={<IconShield size={36} color="#10464e" strokeWidth={1.5} />} tag="Forsvar" title="Spesialprodukt Forsvar" desc="Eigutvikla spesialprodukt til Den norske marine og andre forsvarskundar. Høg tryggleik og driftsikkerheit." />
           <Card icon={<IconCompass size={36} color="#10464e" strokeWidth={1.5} />} tag="Service" title="Service & Vedlikehald" desc="Eigne servicefolk med djup produktkunnskap. Planlagte oppdrag og rask respons ved behov." />
+        </div>
+      </div>
+
+      {/* News cards */}
+      <div style={{ marginTop: 56 }}>
+        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV NYHETSOVERSIKT</div>
+        <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 20 }}>Siste nyheter (preview)</div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: 16 }}>
+          {newsItems.map((item) => {
+            const isHovered = hoveredNews === item.id;
+
+            return (
+              <article
+                key={item.id}
+                onMouseEnter={() => setHoveredNews(item.id)}
+                onMouseLeave={() => setHoveredNews(null)}
+                style={{
+                  background: "#ffffff",
+                  border: `1px solid ${isHovered ? "#A84F2E" : "rgba(16,70,78,0.12)"}`,
+                  display: "grid",
+                  gridTemplateColumns: "minmax(170px, 220px) 1fr",
+                  minWidth: 0,
+                  transition: "border-color 0.2s, transform 0.2s",
+                  transform: isHovered ? "translateY(-2px)" : "none",
+                }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  style={{ width: "100%", height: "100%", minHeight: 170, objectFit: "cover" }}
+                />
+                <div style={{ padding: 22, display: "flex", flexDirection: "column" }}>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 19, color: "#10464e", lineHeight: 1.25, marginBottom: 10 }}>{item.title}</h3>
+                  <p style={{ fontSize: 14, color: "#858f8f", lineHeight: 1.65 }}>{item.desc}</p>
+                  <div style={{ marginTop: "auto", paddingTop: 16, display: "flex", alignItems: "center", gap: 6 }}>
+                    <span style={{ fontSize: 12, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, color: "#641919", letterSpacing: "0.06em" }}>Les mer</span>
+                    <span style={{ color: "#641919", fontSize: 16 }}>→</span>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
