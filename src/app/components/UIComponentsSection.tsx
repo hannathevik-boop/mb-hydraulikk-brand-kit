@@ -236,16 +236,17 @@ export function UIComponentsSection() {
                   border: `1px solid ${isHovered ? "#A84F2E" : "rgba(16,70,78,0.12)"}`,
                   display: "grid",
                   gridTemplateColumns: "minmax(170px, 220px) 1fr",
+                  height: 238,
                   minWidth: 0,
                   transition: "border-color 0.2s, transform 0.2s",
                   transform: isHovered ? "translateY(-2px)" : "none",
                 }}
               >
-                <div style={{ padding: "12px 0 12px 12px" }}>
+                <div style={{ padding: "12px 0 12px 12px", height: "100%" }}>
                   <img
                     src={item.image}
                     alt={item.alt}
-                    style={{ width: "100%", height: "100%", minHeight: 170, objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
                 <div style={{ padding: 22, display: "flex", flexDirection: "column" }}>
