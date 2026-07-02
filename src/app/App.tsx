@@ -9,14 +9,21 @@ import { WebsitePreviewSection } from "./components/WebsitePreview";
 import { PatternSection } from "./components/PatternSection";
 import { Button } from "./components/ui/button";
 
+const CANVA_PRESENTATION_URL = "https://www.canva.com/design/DAHN713tf1U/rd5-8k1Sk0fJIwVw9uaasA/view";
+const CANVA_EMBED_URL = `${CANVA_PRESENTATION_URL}?embed`;
+const CANVA_DOWNLOAD_URL = `${CANVA_PRESENTATION_URL}?download`;
+const LOCAL_PPTX_DOWNLOAD_URL = "/brand-guideline/MBH-Brand-Guideline.pptx";
+const LOCAL_MP4_DOWNLOAD_URL = "/brand-guideline/MBH-Brand-Guideline.mp4";
+
 const SECTIONS = [
   { id: "logo", label: "Logo" },
-  { id: "colors", label: "Fargar" },
+  { id: "colors", label: "Farger" },
   { id: "type", label: "Typografi" },
   { id: "icons", label: "Ikon" },
-  { id: "components", label: "Komponentar" },
-  { id: "figures", label: "Figurar" },
-  { id: "patterns", label: "Mønster" },
+  { id: "components", label: "Komponenter" },
+  { id: "figures", label: "Figurer" },
+  { id: "patterns", label: "Mønstre" },
+  { id: "presentation", label: "Presentasjon" },
   { id: "website", label: "Nettside" },
 ];
 
@@ -78,14 +85,14 @@ export default function App() {
           MB <span style={{ color: "#A3B6B9" }}>Hydraulikk</span>
         </h1>
         <p style={{ fontSize: 17, color: "rgba(250,246,241,0.6)", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
-          Komplett visuell identitet — logo, fargar, typografi, ikonografi, UI-komponentar og nettside. For eit selskap som har utvikla og produsert hydraulisk utstyr for maritimt miljø sidan 1926.
+          Komplett visuell identitet - logo, farger, typografi, ikonografi, UI-komponenter og nettside. For et selskap som har utviklet og produsert hydraulisk utstyr for maritimt miljø siden 1926.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 24, borderTop: "1px solid rgba(185,188,172,0.15)", paddingTop: 40 }}>
           {[
-            ["100 år", "STIFTA 1926"],
+            ["100 år", "STIFTET 1926"],
             ["Global", "REKKEVIDDE"],
-            ["Aluminium", "SJØVASSBESTANDIG"],
-            ["Mjosundet", "AURE, NOREG"],
+            ["Aluminium", "SJØVANNSBESTANDIG"],
+            ["Mjosundet", "AURE, NORGE"],
           ].map(([v, l]) => (
             <div key={l}>
               <div style={{ fontWeight: 800, fontSize: 24, color: "#faf6f1" }}>{v}</div>
@@ -110,6 +117,41 @@ export default function App() {
         <div id="figures"><MarketingFigures /></div>
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="patterns"><PatternSection /></div>
+        <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
+        <div id="presentation" style={{ padding: "56px 0" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12, marginBottom: 20 }}>
+            <div>
+              <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.2em", color: "#A84F2E", marginBottom: 8 }}>BRAND GUIDELINE</p>
+              <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2.3rem)", lineHeight: 1.1, color: "#10464E", fontWeight: 800 }}>Presentasjon med animasjoner</h2>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              <Button asChild size="sm" className="bg-[#10464E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#0b3136] hover:text-[#faf6f1]" style={{ borderRadius: 0, boxShadow: "none" }}>
+                <a href={LOCAL_PPTX_DOWNLOAD_URL} download target="_blank" rel="noreferrer">Last ned PPTX</a>
+              </Button>
+              <Button asChild size="sm" className="bg-[#A84F2E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#73331f] hover:text-[#faf6f1]" style={{ borderRadius: 0, boxShadow: "none" }}>
+                <a href={LOCAL_MP4_DOWNLOAD_URL} download target="_blank" rel="noreferrer">Last ned MP4</a>
+              </Button>
+              <Button asChild size="sm" className="bg-[#10464E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#0b3136] hover:text-[#faf6f1]" style={{ borderRadius: 0, boxShadow: "none" }}>
+                <a href={CANVA_DOWNLOAD_URL} target="_blank" rel="noreferrer">Canva-nedlasting (fallback)</a>
+              </Button>
+            </div>
+          </div>
+          <p style={{ fontSize: 14, color: "rgba(16,70,78,0.72)", lineHeight: 1.6, marginBottom: 16 }}>
+            Bla frem og tilbake i presentasjonen direkte her. Hvis lokal nedlasting ikke er tilgjengelig, kan brukeren bruke Canva-knappen for eksport.
+          </p>
+          <div style={{ border: "1px solid rgba(16,70,78,0.15)", background: "#fff", padding: 10 }}>
+            <div style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}>
+              <iframe
+                src={CANVA_EMBED_URL}
+                title="MB Hydraulikk Brand Guideline"
+                loading="lazy"
+                allowFullScreen
+                allow="fullscreen"
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+              />
+            </div>
+          </div>
+        </div>
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="website"><WebsitePreviewSection /></div>
 

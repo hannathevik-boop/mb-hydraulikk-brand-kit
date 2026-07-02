@@ -47,7 +47,7 @@ export function ColorPaletteSection() {
         Merkevarefarger
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        Fargene er hentet fra materialene og omgivelsene vi arbeider med til daglig. Fargane er henta frå materiala og miljøa vi jobbar i – aluminium, måla ståloverflater, maskineri og hav. Paletten byggjer på reelle referansar frå hydraulisk utstyr og maritim drift.
+        Fargene er hentet fra materialene og omgivelsene vi arbeider med til daglig: aluminium, malte ståloverflater, maskineri og hav. Paletten bygger på reelle referanser fra hydraulisk utstyr og maritim drift.
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 16 }}>
         {COLORS.map((c) => <ColorSwatch key={c.hex} c={c} />)}
@@ -114,7 +114,7 @@ export function LogoSection() {
         Merkevareidentitet
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-        NB NB!dette er kun eit EKSEMPEL PÅ NY LOGO: MB Hydraulikk sitt merke refererer til industriell presisjon og norsk maritim arv — forankra i Mjosundet sidan 1926. Logoen er teikna for å fungere i mange kontekstar og størrelsar. Fargevariantar for ulike bruksområde og bakgrunnar. Oppdatert slik at den fungerer på alle visuelle digitale flater med ulike bakgrunnar for betre lesbarhet, med universal font, farge og utforming for å imøtekomme krav universell tilgjengelighet. Ingen konflikt mellom font og logo, begge deler er utvikla for å fungere saman og utfylle kvarandre i alle format og medium. Benytting av google fonts gjer at alle, på tvers av landegrenser, kan få opp både nettside og logo korrekt, utan å måtte laste ned spesifikke fontfiler. 
+        Dette er et eksempel på ny logo. MB Hydraulikks merke refererer til industriell presisjon og norsk maritim arv, forankret i Mjosundet siden 1926. Logoen er tegnet for å fungere i mange kontekster og størrelser, med fargevarianter for ulike bruksområder og bakgrunner. Den er oppdatert for god lesbarhet på digitale flater og for å støtte krav til universell utforming. Font og logo er utviklet for å fungere sammen i alle formater og medier. Bruk av Google Fonts gjør at nettsted og logo vises korrekt uten nedlasting av spesifikke fontfiler.
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 16 }}>
         {LOGO_VARIANTS.map((v) => (

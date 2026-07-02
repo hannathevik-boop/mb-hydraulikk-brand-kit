@@ -184,7 +184,7 @@ export function IconSection() {
             Hydrauliske og maritime ikoner
           </h2>
           <p style={{ color: "#858f8f", fontSize: 15, maxWidth: 480 }}>
-             20 tilpassa SVG-ikon teikna på eit 48 px rutenett. 2 px strek, avrunda samanføyingar. Utvikla for bruk i hydraulikk- og maritime kontekstar.          </p>
+             20 tilpassede SVG-ikoner tegnet på et 48 px-rutenett. 2 px strek, avrundede sammenføyninger. Utviklet for bruk i hydraulikk- og maritime kontekster.          </p>
         </div>
         <div style={{ display: "flex", gap: 8, flexDirection: "column", alignItems: "flex-end" }}>
           <div style={{ display: "flex", gap: 8 }}>

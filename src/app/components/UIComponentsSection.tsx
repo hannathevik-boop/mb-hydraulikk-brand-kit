@@ -189,10 +189,10 @@ export function UIComponentsSection() {
       <div>
         <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>SERVICE CARDS</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
-          <Card icon={<IconHydraulic size={36} color="#10464e" strokeWidth={1.5} />} tag="Vinsjar" title="Vinsjar & Capstanar" desc="Ankervinsjar, slepevinsjar, trålevinsjar og capstanar i sjøvassbestandig aluminium. Skreddarsydd for fartøyet ditt." />
-          <Card icon={<IconCrane size={36} color="#10464e" strokeWidth={1.5} />} tag="Løfteutstyr" title="Kraner & Davitar" desc="MOB-davitar, lastekraner og LARS-system. Kritisk utstyr for redning, last og subsea-operasjonar." />
-          <Card icon={<IconPropeller size={36} color="#10464e" strokeWidth={1.5} />} tag="Framdrift" title="Sidepropellar" desc="Hydrauliske sidepropellar for presis manøvrering. Kompakt kraft, minimalt vedlikehald, lang levetid." />
-          <Card icon={<IconWrench size={36} color="#10464e" strokeWidth={1.5} />} tag="Service" title="Service & Vedlikehald" desc="Eigne servicefolk med inngåande produktkunnskap. Planlagte oppdrag og rask respons ved behov." />
+          <Card icon={<IconHydraulic size={36} color="#10464e" strokeWidth={1.5} />} tag="Vinsjer" title="Vinsjer & Capstaner" desc="Ankervinsjer, slepevinsjer, trålevinsjer og capstaner i sjøvannsbestandig aluminium. Skreddersydd for fartøyet ditt." />
+          <Card icon={<IconCrane size={36} color="#10464e" strokeWidth={1.5} />} tag="Løfteutstyr" title="Kraner & Daviter" desc="MOB-daviter, lastekraner og LARS-system. Kritisk utstyr for redning, last og subsea-operasjoner." />
+          <Card icon={<IconPropeller size={36} color="#10464e" strokeWidth={1.5} />} tag="Fremdrift" title="Sidepropeller" desc="Hydrauliske sidepropeller for presis manøvrering. Kompakt kraft, minimalt vedlikehold, lang levetid." />
+          <Card icon={<IconWrench size={36} color="#10464e" strokeWidth={1.5} />} tag="Service" title="Service & Vedlikehold" desc="Egne servicefolk med inngående produktkunnskap. Planlagte oppdrag og rask respons ved behov." />
         </div>
       </div>
     </section>

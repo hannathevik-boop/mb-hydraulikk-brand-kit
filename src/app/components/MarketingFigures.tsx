@@ -1,20 +1,20 @@
 import React from "react";
 import { SectionLabel } from "./BrandSection";
 
-/* NB: Desse tala er illustrative døme for brand kit — ikkje reell forretningsdata */
+/* NB: Disse tallene er illustrative eksempler for brand kit - ikke reelle forretningsdata */
 const areaData = [
   { year: "2019", v: 60 }, { year: "2020", v: 52 }, { year: "2021", v: 71 },
   { year: "2022", v: 88 }, { year: "2023", v: 94 }, { year: "2024", v: 105 }, { year: "2025", v: 118 },
 ];
 const barData = [
-  { label: "Vinsjar", v: 35 }, { label: "Kraner", v: 28 }, { label: "Davitar", v: 18 },
+  { label: "Vinsjer", v: 35 }, { label: "Kraner", v: 28 }, { label: "Daviter", v: 18 },
   { label: "Sideprop.", v: 22 }, { label: "LARS", v: 15 }, { label: "Service", v: 30 },
 ];
 const pieData = [
   { name: "Fiskeri/Oppdrett", pct: 38, color: "#10464e" },
   { name: "Seismikk/Subsea", pct: 26, color: "#641919" },
-  { name: "Forsvar/Forsking", pct: 20, color: "#a84f2e" },
-  { name: "Verft/Anna", pct: 16, color: "#858f8f" },
+  { name: "Forsvar/Forskning", pct: 20, color: "#a84f2e" },
+  { name: "Verft/Annet", pct: 16, color: "#858f8f" },
 ];
 
 function BarChart() {
@@ -98,25 +98,25 @@ function DonutChart() {
 export function MarketingFigures() {
   return (
     <section style={{ padding: "80px 0" }}>
-      <SectionLabel>06 — TAL OG FIGURAR</SectionLabel>
+      <SectionLabel>06 — TALL OG FIGURER</SectionLabel>
       <h2 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 36, color: "#10464e", marginBottom: 8 }}>
         Datavisualisering
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 8, maxWidth: 560 }}>
-        Merkevarekorrekt grafstil for rapportar, presentasjonar og web. Figurar er illustrative — faktiske tal er konfidensielle.
+        Merkevarekorrekt grafstil for rapporter, presentasjoner og web. Figurene er illustrative - faktiske tall er konfidensielle.
       </p>
       <div style={{ fontSize: 11, color: "#641919", fontWeight: 600, letterSpacing: "0.08em", marginBottom: 40 }}>
-        ⚠ ILLUSTRATIVE FIGURAR — IKKJE REELL FORRETNINGSDATA
+        ⚠ ILLUSTRATIVE FIGURER - IKKE REELLE FORRETNINGSDATA
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, marginBottom: 24 }}>
         <div style={{ background: "#ffffff", border: "1px solid rgba(16,70,78,0.1)", padding: 32 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV VEKST (IKKJE REELL)</div>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV VEKST (IKKE REELL)</div>
           <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 20 }}>Indeksert leveransevekst</div>
           <AreaSparkline />
         </div>
         <div style={{ background: "#ffffff", border: "1px solid rgba(16,70,78,0.1)", padding: 32 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV MARKNADSDELING</div>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV MARKEDSFORDELING</div>
           <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 16 }}>Etter segment (illustrativ)</div>
           <DonutChart />
         </div>
@@ -124,16 +124,16 @@ export function MarketingFigures() {
 
       <div style={{ background: "#10464e", padding: 32, marginBottom: 24 }}>
         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#b9bcac", marginBottom: 4 }}>ILLUSTRATIV FORDELING PER PRODUKTLINJE</div>
-        <div style={{ fontWeight: 700, fontSize: 22, color: "#faf6f1", marginBottom: 24 }}>Vinsjar, Kraner, Davitar, Sidepropellar, LARS, Service</div>
+        <div style={{ fontWeight: 700, fontSize: 22, color: "#faf6f1", marginBottom: 24 }}>Vinsjer, Kraner, Daviter, Sidepropeller, LARS, Service</div>
         <BarChart />
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 1, background: "rgba(16,70,78,0.1)" }}>
         {[
-          { val: "100 år", label: "Stifta 1926", delta: "Jubileum 2026" },
+          { val: "100 år", label: "Stiftet 1926", delta: "Jubileum 2026" },
           { val: "Global", label: "Rekkevidde", delta: "Lokal kompetanse" },
-          { val: "Aluminium", label: "Sjøvassbestandig", delta: "Lågt vedlikehald" },
-          { val: "Mjosundet", label: "Aure, Noreg", delta: "Heimebase" },
+          { val: "Aluminium", label: "Sjøvannsbestandig", delta: "Lavt vedlikehold" },
+          { val: "Mjosundet", label: "Aure, Norge", delta: "Hjemmebase" },
         ].map(k => (
           <div key={k.label} style={{ background: "#ffffff", padding: 28 }}>
             <div style={{ fontWeight: 800, fontSize: 32, color: "#10464e", lineHeight: 1 }}>{k.val}</div>

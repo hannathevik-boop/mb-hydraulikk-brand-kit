@@ -2,13 +2,13 @@ import React from "react";
 import { SectionLabel } from "./BrandSection";
 
 const SCALE = [
-  { label: "Display / H1", size: 56, weight: 800, ls: "-0.02em", sample: "Frå Aure til verdshava" },
+  { label: "Display / H1", size: 56, weight: 800, ls: "-0.02em", sample: "Fra Aure til verdenshavene" },
   { label: "Heading / H2", size: 40, weight: 700, ls: "-0.01em", sample: "Lokal kompetanse, global rekkevidde" },
   { label: "Heading / H3", size: 28, weight: 700, ls: "0", sample: "Hydraulisk utstyr for maritimt miljø" },
   { label: "Subheading / H4", size: 20, weight: 600, ls: "0.02em", sample: "MB Hydraulikk AS, Mjosundet, Aure" },
-  { label: "Body Large", size: 18, weight: 400, ls: "0", sample: "Vi utviklar og produserer vinsjar, kraner, davitar og sidepropellar i sjøvassbestandig aluminium for maritimt bruk over heile verda." },
-  { label: "Body", size: 16, weight: 400, ls: "0", sample: "Kundedreve innovasjon og høg eigenproduksjon gjer oss til den kvalitetsbevisste kunden sitt fyrstevalg." },
-  { label: "Caption / Label", size: 13, weight: 600, ls: "0.12em", sample: "SEISMIKK · SUBSEA · FORSVAR · FORSKING · OPPDRETT · FISKE" },
+  { label: "Body Large", size: 18, weight: 400, ls: "0", sample: "Vi utvikler og produserer vinsjer, kraner, daviter og sidepropeller i sjøvannsbestandig aluminium for maritim bruk over hele verden." },
+  { label: "Body", size: 16, weight: 400, ls: "0", sample: "Kundedrevet innovasjon og høy egenproduksjon gjør oss til førstevalget for kvalitetsbevisste kunder." },
+  { label: "Caption / Label", size: 13, weight: 600, ls: "0.12em", sample: "SEISMIKK · SUBSEA · FORSVAR · FORSKNING · OPPDRETT · FISKE" },
   { label: "Micro", size: 11, weight: 600, ls: "0.2em", sample: "EST. 1926 · MJOSUNDET, AURE · mbh.no" },
 ];
 
@@ -20,7 +20,7 @@ export function TypographySection() {
         Typografisk skala — Plus Jakarta Sans
       </h2>
       <p style={{ color: "#858f8f", fontSize: 15, marginBottom: 48, maxWidth: 480 }}>
-      Plus Jakarta Sans er ein moderne, geometrisk sans-serif med god lesbarheit og eit samtidsretta uttrykk. Éin skrifttype med fleire vekter byggjer eit fullt hierarki. Benytting av google fonts både på nettsida og i logoen gjer at alle, på tvers av landegrenser, kan få opp både nettside og logo korrekt, utan å måtte laste ned spesifikke fontfiler. 
+      Plus Jakarta Sans er en moderne, geometrisk sans-serif med god lesbarhet og et tidsriktig uttrykk. Én skrifttype med flere vekter bygger et tydelig hierarki. Bruk av Google Fonts både på nettstedet og i logoen gjør at alle, på tvers av landegrenser, kan få opp både nettsted og logo korrekt uten å måtte laste ned spesifikke fontfiler.
       </p>
 
       {/* Font weights showcase */}

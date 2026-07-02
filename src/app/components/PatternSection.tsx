@@ -55,7 +55,7 @@ export function PatternSection() {
       link.href = dataUrl;
       link.click();
     } catch {
-      window.alert("Kunne ikkje laste ned no. Prøv igjen.");
+      window.alert("Kunne ikke laste ned nå. Prøv igjen.");
     }
   }
 
