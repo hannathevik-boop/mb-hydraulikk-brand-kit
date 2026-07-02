@@ -221,7 +221,7 @@ export function UIComponentsSection() {
       {/* News cards */}
       <div style={{ marginTop: 56 }}>
         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", color: "#858f8f", marginBottom: 4 }}>ILLUSTRATIV NYHETSOVERSIKT</div>
-        <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 20 }}>Siste nyheter (preview)</div>
+        <div style={{ fontWeight: 700, fontSize: 22, color: "#10464e", marginBottom: 20 }}>Siste nyheter</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: 16 }}>
           {newsItems.map((item) => {
             const isHovered = hoveredNews === item.id;
@@ -236,7 +236,7 @@ export function UIComponentsSection() {
                   border: `1px solid ${isHovered ? "#A84F2E" : "rgba(16,70,78,0.12)"}`,
                   display: "grid",
                   gridTemplateColumns: "minmax(170px, 220px) 1fr",
-                  height: 238,
+                  height: 320,
                   minWidth: 0,
                   transition: "border-color 0.2s, transform 0.2s",
                   transform: isHovered ? "translateY(-2px)" : "none",
@@ -251,7 +251,7 @@ export function UIComponentsSection() {
                 </div>
                 <div style={{ padding: 22, display: "flex", flexDirection: "column" }}>
                   <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 19, color: "#10464e", lineHeight: 1.25, marginBottom: 10 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: "#858f8f", lineHeight: 1.65 }}>{item.desc}</p>
+                  <p style={{ fontSize: 14, color: "#858f8f", lineHeight: 1.65, display: "-webkit-box", WebkitLineClamp: 5, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{item.desc}</p>
                   <div style={{ marginTop: "auto", paddingTop: 16, display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ fontSize: 12, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, color: "#641919", letterSpacing: "0.06em" }}>Les mer</span>
                     <span style={{ color: "#641919", fontSize: 16 }}>→</span>
