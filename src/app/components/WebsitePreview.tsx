@@ -131,6 +131,10 @@ function ServicesPreview(): import("react/jsx-runtime").JSX.Element {
             }}>{s.tag}</span>
             <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 17, color: "#10464e", marginBottom: 10 }}>{s.title}</h3>
             <p style={{ fontSize: 13, color: "#858f8f", lineHeight: 1.65 }}>{s.desc}</p>
+            <div style={{ marginTop: 20, display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 12, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, color: "#641919", letterSpacing: "0.06em" }}>Les mer</span>
+              <span style={{ color: "#641919", fontSize: 16 }}>→</span>
+            </div>
           </div>
           );
         })}

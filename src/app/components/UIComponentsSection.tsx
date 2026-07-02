@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SectionLabel } from "./BrandSection";
-import { IconShield, IconWrench, IconHydraulic, IconCrane, IconPropeller } from "./MBHIcons";
+import { IconShield, IconHydraulic, IconCrane, IconPropeller, IconGear, IconCompass } from "./MBHIcons";
 
 function Btn({
   children, variant = "primary", size = "md", icon, disabled = false
@@ -115,8 +115,10 @@ function Card({ title, tag, desc, icon }: { title: string; tag: string; desc: st
       onMouseLeave={() => setHov(false)}
       style={{
         background: "#ffffff",
-        border: `1px solid ${hov ? "#10464e" : "rgba(16,70,78,0.12)"}`,
+        border: `1px solid ${hov ? "#A84F2E" : "rgba(16,70,78,0.12)"}`,
         padding: 32,
+        borderRadius: 0,
+        minWidth: 0,
         transition: "border-color 0.2s, transform 0.2s",
         transform: hov ? "translateY(-2px)" : "none",
         cursor: "default",
@@ -189,10 +191,12 @@ export function UIComponentsSection() {
       <div>
         <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", color: "#858f8f", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: 20 }}>SERVICE CARDS</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
-          <Card icon={<IconHydraulic size={36} color="#10464e" strokeWidth={1.5} />} tag="Vinsjer" title="Vinsjer & Capstaner" desc="Ankervinsjer, slepevinsjer, trålevinsjer og capstaner i sjøvannsbestandig aluminium. Skreddersydd for fartøyet ditt." />
-          <Card icon={<IconCrane size={36} color="#10464e" strokeWidth={1.5} />} tag="Løfteutstyr" title="Kraner & Daviter" desc="MOB-daviter, lastekraner og LARS-system. Kritisk utstyr for redning, last og subsea-operasjoner." />
-          <Card icon={<IconPropeller size={36} color="#10464e" strokeWidth={1.5} />} tag="Fremdrift" title="Sidepropeller" desc="Hydrauliske sidepropeller for presis manøvrering. Kompakt kraft, minimalt vedlikehold, lang levetid." />
-          <Card icon={<IconWrench size={36} color="#10464e" strokeWidth={1.5} />} tag="Service" title="Service & Vedlikehold" desc="Egne servicefolk med inngående produktkunnskap. Planlagte oppdrag og rask respons ved behov." />
+          <Card icon={<IconHydraulic size={36} color="#10464e" strokeWidth={1.5} />} tag="Vinsjar" title="Vinsjar & Capstanar" desc="Ankervinsjar, slepevinsjar, trålevinsjar og capstanar i aluminium og rustfritt stål for alle maritime bruksområde." />
+          <Card icon={<IconCrane size={36} color="#10464e" strokeWidth={1.5} />} tag="Løfteutstyr" title="Kraner & Davitar" desc="Kraner, bommar og davitar for last, redning og MOB-operasjonar. Tilpassa fartøy og plattformar." />
+          <Card icon={<IconPropeller size={36} color="#10464e" strokeWidth={1.5} />} tag="Framdrift" title="Sidepropellar" desc="Hydrauliske sidepropellar for presis manøvrering. Kompakt, kraftig og minimalt vedlikehald." />
+          <Card icon={<IconGear size={36} color="#10464e" strokeWidth={1.5} />} tag="LARS" title="LARS & Systemløysingar" desc="Komplette Launch and Recovery System og skreddarsydde systemløysingar for seismikk, subsea og forsvar." />
+          <Card icon={<IconShield size={36} color="#10464e" strokeWidth={1.5} />} tag="Forsvar" title="Spesialprodukt Forsvar" desc="Eigutvikla spesialprodukt til Den norske marine og andre forsvarskundar. Høg tryggleik og driftsikkerheit." />
+          <Card icon={<IconCompass size={36} color="#10464e" strokeWidth={1.5} />} tag="Service" title="Service & Vedlikehald" desc="Eigne servicefolk med djup produktkunnskap. Planlagte oppdrag og rask respons ved behov." />
         </div>
       </div>
     </section>
