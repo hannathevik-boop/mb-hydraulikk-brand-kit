@@ -90,7 +90,7 @@ export function LogoSection() {
   async function downloadPng(key: string) {
     const el = imgRefs.current[key];
     if (!el) return;
-    const dataUrl = await toPng(el, { cacheBust: true, pixelRatio: 3 });
+    const dataUrl = await toPng(el, { cacheBust: true, pixelRatio: 3, backgroundColor: "transparent" });
     const link = document.createElement("a");
     link.download = `mbh-logo-${key.toLowerCase().replace(/\s+/g, "-")}.png`;
     link.href = dataUrl;
@@ -126,7 +126,7 @@ export function LogoSection() {
             >
               <div
                 ref={(el) => { imgRefs.current[v.label] = el; }}
-                style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: v.bg, padding: 8 }}
+                style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", padding: 8 }}
               >
                 <MBHLogo variant={v.variant} theme={v.theme} size="lg" />
               </div>
