@@ -1,11 +1,6 @@
-import bigDarkSvg from "./ui/logos_test_2/mbh_stor_blaa.svg";
-import bigLightSvg from "./ui/logos_test_2/mbh_stor_hvit.svg";
-import whiteMarkSvg from "./ui/logos_test_2/mbh_hvit.svg";
-import blueMarkSvg from "./ui/logos_test_2/mbh_bla.svg";
-import smallDarkSvg from "./ui/logos_test_2/small_blaa.svg";
-import smallLightSvg from "./ui/logos_test_2/small_hvit.svg";
-import midSmallDarkSvg from "./ui/logos_test_2/mid_small_blue.svg";
-import midSmallLightSvg from "./ui/logos_test_2/mid_small_hvit.svg";
+import whiteLogoSvg from "./ui/logos_test_2/mbh-hvit.svg";
+import blueLogoSvg from "./ui/logos_test_2/mbh-blaa.svg";
+import blackLogoSvg from "./ui/logos_test_2/mbh-svart.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
@@ -28,28 +23,17 @@ export function getLogoAsset(
   size: "sm" | "md" | "lg" | "xl" | number = "md"
 ): string {
   if (variant === "mark") {
-    return theme === "light" ? blueMarkSvg : whiteMarkSvg;
+    return theme === "light" ? blueLogoSvg : whiteLogoSvg;
   }
 
   if (variant === "wordmark") {
-    return theme === "light" ? blueMarkSvg : whiteMarkSvg;
+    return theme === "light" ? blueLogoSvg : whiteLogoSvg;
   }
 
   // Full logo
-  if (size === "sm" || size === "md") {
-    return theme === "light"
-      ? smallDarkSvg
-      : theme === "crimson"
-        ? smallLightSvg
-        : smallLightSvg;
-  }
-
-  // lg and xl sizes
-  return theme === "light"
-    ? bigDarkSvg
-    : theme === "crimson"
-      ? bigLightSvg
-      : bigLightSvg;
+  if (theme === "light") return blackLogoSvg;
+  if (theme === "dark") return whiteLogoSvg;
+  return whiteLogoSvg;
 }
 
 export function MBHMark({
