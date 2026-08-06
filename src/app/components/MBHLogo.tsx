@@ -3,6 +3,7 @@ import blueLogoSvg from "./ui/svg-logos-test/mbh-blaa.svg";
 import bigDarkSvg from "./ui/svg-logos-test/big-dark.svg";
 import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
 import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
+import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
@@ -29,7 +30,7 @@ export function getLogoAsset(
   }
 
   if (variant === "wordmark") {
-    return theme === "light" ? midSmallLightSvg : whiteLogoSvg;
+    return theme === "light" ? midSmallLightSvg : midSmallDarkSvg;
   }
 
   // Full logo
