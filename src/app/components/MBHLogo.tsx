@@ -1,6 +1,8 @@
 import whiteLogoSvg from "./ui/svg-logos-test/mbh-hvit.svg";
 import blueLogoSvg from "./ui/svg-logos-test/mbh-blaa.svg";
-import blackLogoSvg from "./ui/svg-logos-test/mbh-svart.svg";
+import bigDarkSvg from "./ui/svg-logos-test/big-dark.svg";
+import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
+import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
@@ -27,13 +29,12 @@ export function getLogoAsset(
   }
 
   if (variant === "wordmark") {
-    return theme === "light" ? blueLogoSvg : whiteLogoSvg;
+    return theme === "light" ? midSmallLightSvg : whiteLogoSvg;
   }
 
   // Full logo
-  if (theme === "light") return blackLogoSvg;
-  if (theme === "dark") return whiteLogoSvg;
-  return whiteLogoSvg;
+  if (size === "sm" || size === "md") return smallBlackSvg;
+  return bigDarkSvg;
 }
 
 export function MBHMark({
