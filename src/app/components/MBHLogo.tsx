@@ -2,7 +2,7 @@ import whiteLogoSvg from "./ui/svg-logos-test/mbh-hvit.svg";
 import blueLogoSvg from "./ui/svg-logos-test/mbh-blaa.svg";
 import bigDarkSvg from "./ui/svg-logos-test/big-dark.svg";
 import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
-import smallBlaaSvg from "./ui/svg-logos-test/small_blaa.svg";
+import bigBlaaSvg from "./ui/svg-logos-test/mbh_stor_blaa.svg";
 import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
 import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
 
@@ -35,7 +35,7 @@ export function getLogoAsset(
   }
 
   // Full logo
-  if (theme === "light") return smallBlaaSvg;
+  if (theme === "light") return bigBlaaSvg;
   if (size === "sm" || size === "md") return smallBlackSvg;
   return bigDarkSvg;
 }
