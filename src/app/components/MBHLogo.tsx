@@ -1,6 +1,6 @@
-import whiteLogoSvg from "./ui/logos_test_2/mbh-hvit.svg";
-import blueLogoSvg from "./ui/logos_test_2/mbh-blaa.svg";
-import blackLogoSvg from "./ui/logos_test_2/mbh-svart.svg";
+import whiteLogoSvg from "./ui/svg-logos-test/mbh-hvit.svg";
+import blueLogoSvg from "./ui/svg-logos-test/mbh-blaa.svg";
+import blackLogoSvg from "./ui/svg-logos-test/mbh-svart.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
