@@ -154,7 +154,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
         </div>
       </div>
       </div>
-      <div style={{ background: "#faf6f1", padding: "32px clamp(16px, 5vw, 80px)", display: "flex", gap: 64, flexWrap: "wrap" }}>
+      <div style={{ background: "#faf6f1", borderBottom: "1px solid rgba(16,70,78,0.12)", padding: "32px clamp(16px, 5vw, 80px)", display: "flex", gap: 64, flexWrap: "wrap" }}>
         {[
           { value: "100 år", label: "STIFTA 1926" },
           { value: "Global", label: "REKKEVIDDE" },
