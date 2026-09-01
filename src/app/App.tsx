@@ -82,7 +82,7 @@ export default function App() {
         </div>
         <h1 style={{ display: "flex", alignItems: "center", gap: 16, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 24 }}>
           <span style={{ display: "block", height: "0.92em", width: "auto" }}>
-           <span style={{ fontSize: 48, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>MB</span>
+           <span style={{ color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>MB</span>
           </span>
           <span style={{ color: "#A3B6B9" }}>Hydraulikk AS</span>
         </h1>
