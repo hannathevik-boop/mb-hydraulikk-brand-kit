@@ -86,7 +86,7 @@ export default function App() {
           </span>
           <span style={{ position: "relative", color: "#A3B6B9" }}>
             Hydraulikk AS
-            <img src={lightningSvg} alt="" aria-hidden="true" style={{ position: "absolute", top: "1.22em", left: "4.7em", width: "4em", height: "auto" }} />
+            <img src={lightningSvg} alt="" aria-hidden="true" style={{ position: "absolute", top: "1.22em", left: "1.7em", width: "4em", height: "auto" }} />
           </span>
         </h1>
         <p style={{ fontSize: 17, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
