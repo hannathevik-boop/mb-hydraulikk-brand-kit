@@ -80,13 +80,15 @@ export default function App() {
             VISUELL IDENTITET · mbh.no · MJOSUNDET, AURE
           </span>
         </div>
-        <h1 style={{ display: "flex", alignItems: "center", gap: 16, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 5 }}>
+        <h1 style={{ display: "flex", alignItems: "center", gap: 16, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 48 }}>
           <span style={{ display: "block", height: "0.92em", width: "auto" }}>
            <span style={{ color: "#faf6f1" }}>MB</span>
           </span>
-          <span style={{ color: "#A3B6B9" }}>Hydraulikk AS</span>
+          <span style={{ position: "relative", color: "#A3B6B9" }}>
+            Hydraulikk AS
+            <img src={lightningSvg} alt="" aria-hidden="true" style={{ position: "absolute", top: "1.22em", left: "6.1em", width: "2.65em", height: "auto" }} />
+          </span>
         </h1>
-        <img src={lightningSvg} alt="" aria-hidden="true" style={{ display: "block", width: 500, height: "auto", marginBottom: 24 }} />
         <p style={{ fontSize: 17, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
           Komplett visuell identitet - farger, typografi, ikonografi, UI-komponenter og eksempel på nettside. For et selskap som har utviklet og produsert hydraulisk utstyr for maritimt miljø siden 1926.
         </p>
