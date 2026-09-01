@@ -1,14 +1,16 @@
 import whiteLogoSvg from "./ui/svg-logos-test/mbh-hvit.svg";
+import bigWarmWhiteLogoSvg from "./ui/svg-logos-test/mbh_stor_hvit.svg";
 import blueLogoSvg from "./ui/svg-logos-test/mbh-blaa.svg";
 import bigDarkSvg from "./ui/svg-logos-test/big-dark.svg";
 import smallBlackSvg from "./ui/svg-logos-test/small-black.svg";
 import bigBlaaSvg from "./ui/svg-logos-test/mbh_stor_blaa.svg";
 import midSmallLightSvg from "./ui/svg-logos-test/mid-small-light.svg";
 import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
+import midSmallBlueSvg from "./ui/svg-logos-test/mid_small_blue.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
-  theme?: "dark" | "light" | "crimson" | "warmWhite";
+  theme?: "blue" | "dark" | "light" | "crimson" | "warmWhite";
   size?: "sm" | "md" | "lg" | "xl" | number;
   className?: string;
   color?: string;
@@ -23,16 +25,17 @@ const sizeMap = {
 
 export function getLogoAsset(
   variant: "full" | "mark" | "wordmark" = "full",
-  theme: "dark" | "light" | "crimson" | "warmWhite" = "dark",
+  theme: "blue" | "dark" | "light" | "crimson" | "warmWhite" = "dark",
   size: "sm" | "md" | "lg" | "xl" | number = "md"
 ): string {
-  if (theme === "warmWhite") return whiteLogoSvg;
+  if (theme === "warmWhite") return bigWarmWhiteLogoSvg;
 
   if (variant === "mark") {
     return theme === "light" ? blueLogoSvg : whiteLogoSvg;
   }
 
   if (variant === "wordmark") {
+    if (theme === "blue") return midSmallBlueSvg;
     return theme === "light" ? midSmallLightSvg : midSmallDarkSvg;
   }
 
