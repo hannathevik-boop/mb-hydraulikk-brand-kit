@@ -1,7 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MBHLogo from "./MBHLogo";
 import { IconHydraulic, IconCrane, IconPropeller, IconGear, IconShield, IconCompass } from "./MBHIcons";
 import { SectionLabel } from "./BrandSection";
+import heroImage0014 from "../images/20260628_MBhydraulikk_0014.jpg";
+import heroImage0134 from "../images/20260701_MBHdrone_Thevik_0134.jpg";
+import heroImage0053 from "../images/20260628_MBhydraulikk_0053.jpg";
+import heroImage1729 from "../images/D71_1729.JPG";
+import heroImage0124 from "../images/20260628_MBhydraulikk_0124.jpg";
+import heroImage0081 from "../images/20260628_MBhydraulikk_0081.jpg";
+
+const HERO_IMAGES = [
+  heroImage0014,
+  heroImage0134,
+  heroImage0053,
+  heroImage1729,
+  heroImage0124,
+  heroImage0081,
+];
 
 function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
@@ -93,13 +108,27 @@ function NewsPreview(): import("react/jsx-runtime").JSX.Element {
 }
 
 function HeroPreview(): import("react/jsx-runtime").JSX.Element {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveImage((currentImage) => (currentImage + 1) % HERO_IMAGES.length);
+    }, 6000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <div style={{ position: "relative", background: "#0a2e35", minHeight: "min(520px, 55vh)", display: "flex", flexDirection: "column", overflow: "hidden" }}>
-      <img
-        src="https://images.unsplash.com/photo-1573747326733-4f1faa8bc015?w=1400&h=600&fit=crop&auto=format"
-        alt="Båt i hamn ved fjell"
-        style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.25 }}
-      />
+      {HERO_IMAGES.map((image, index) => (
+        <img
+          key={image}
+          src={image}
+          alt=""
+          aria-hidden="true"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: index === activeImage ? 0.25 : 0, transition: "opacity 1.8s ease-in-out" }}
+        />
+      ))}
       <div style={{ position: "relative", zIndex: 1, padding: "80px clamp(16px, 5vw, 80px) 60px", maxWidth: 760, width: "100%" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32, flexWrap: "wrap" }}>
           <div style={{ width: 32, height: 2, background: "#A84F2E" }} />
@@ -112,7 +141,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
           <span style={{ color: "#D6E1E4" }}>til verdshava.</span>
         </h1>
         <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 17, color: "rgba(250,246,241,0.65)", lineHeight: 1.7, maxWidth: 520, marginBottom: 48 }}>
-          MB Hydraulikk utviklar og produserer vinsjar, kraner, davitar og sidepropellar i sjøvassbestandig aluminium — skreddarsydde for maritimt bruk over heile verda.
+          MB Hydraulikk AS utviklar og produserer vinsjar, kraner, capstaner, davitar og sidepropellar i sjøvassbestandig aluminium — skreddarsydde for maritimt bruk over heile verda.
         </p>
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
           <div style={{ background: "#A84F2E", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
