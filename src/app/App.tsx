@@ -39,7 +39,7 @@ export default function App() {
     <div style={{ background: "#faf6f1", minHeight: "100vh", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
 
       {/* Header */}
-      <header style={{ background: "#10464E", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
+      <header style={{ background: "#0a2e35", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
         <MBHLogo variant="full" theme="warmWhite" size="sm" />
         <nav style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
           {SECTIONS.map(s => {
@@ -50,7 +50,7 @@ export default function App() {
               key={s.id}
               variant="ghost"
               size="sm"
-              className="bg-[#10464E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#A84F2E] hover:text-[#faf6f1]"
+              className="bg-[#0a2e35] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#A84F2E] hover:text-[#faf6f1]"
               style={{ borderRadius: 0, boxShadow: "none" }}
               onClick={() => goTo(s.id)}
             >
@@ -73,7 +73,7 @@ export default function App() {
       </header>
 
       {/* Cover */}
-      <div style={{ background: "#10464e", padding: "60px clamp(20px, 6vw, 80px) 80px" }}>
+      <div style={{ background: "#0a2e35", padding: "60px clamp(20px, 6vw, 80px) 80px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40, flexWrap: "wrap" }}>
           <div style={{ width: 48, height: 2, background: "#A84F2E" }} />
           <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.24em", color: "#FAF6F1" }}>
