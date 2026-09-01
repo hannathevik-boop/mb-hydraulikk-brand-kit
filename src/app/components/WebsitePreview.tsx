@@ -21,7 +21,7 @@ const HERO_IMAGES = [
 function NavPreview(): import("react/jsx-runtime").JSX.Element {
   return (
     <nav style={{ background: "#0a2e35", padding: "16px clamp(16px, 5vw, 48px)", minHeight: 72, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-      <MBHLogo variant="full" theme="warmWhite" size={36} />
+      <MBHLogo variant="full" theme="warmWhite" size={30} />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center", justifyContent: "flex-end" }}>
         {["Produkt", "Tenester", "Kunder", "Om oss"].map(item => (
           <span key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 400, fontSize: 12, letterSpacing: "0.04em", color: "#faf6f1", cursor: "pointer", whiteSpace: "nowrap" }}>
