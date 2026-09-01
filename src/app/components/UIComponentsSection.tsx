@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { SectionLabel } from "./BrandSection";
 import { IconShield, IconHydraulic, IconCrane, IconPropeller, IconGear, IconCompass } from "./MBHIcons";
+import newsImage0088 from "../images/20260628_MBhydraulikk_0088.jpg";
+import newsDeliveryImage from "../images/Skjermbilde 2026-09-01 kl. 12.11.10.png";
 
 function Btn({
   children, variant = "primary", size = "md", icon, disabled = false
@@ -142,16 +144,16 @@ export function UIComponentsSection() {
     {
       id: "k1",
       title: "MB Hydraulikk markerer 100 år i 2026",
-      desc: "Jubileumsåret markeres med historisk tilbakeblikk, kundecaser og ny satsing på digitale produktopplevelser.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop&auto=format",
-      alt: "Møte med tekniske tegninger",
+      desc: "Jubileumsåret markerast med historisk tilbakeblikk, kundehistorier og fokus på vidare utvikling frå Mjosundet.",
+      image: newsImage0088,
+      alt: "MB Hydraulikk-utstyr ved sjøen",
     },
     {
       id: "k2",
       title: "Ny leveranse til maritimt prosjekt",
       desc: "Skreddersydd hydraulikkløsning med lavt vedlikeholdsbehov er levert til internasjonalt fartøy i operativ drift.",
-      image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&h=600&fit=crop&auto=format",
-      alt: "Maritimt fartøy ved kai",
+      image: newsDeliveryImage,
+      alt: "Ny leveranse til Sletta Verft",
     },
   ];
 
@@ -242,7 +244,7 @@ export function UIComponentsSection() {
                   transform: isHovered ? "translateY(-2px)" : "none",
                 }}
               >
-                <div style={{ padding: "12px 0 12px 12px", height: "100%" }}>
+                <div style={{ boxSizing: "border-box", height: 320, padding: "12px 0 12px 12px", overflow: "hidden" }}>
                   <img
                     src={item.image}
                     alt={item.alt}

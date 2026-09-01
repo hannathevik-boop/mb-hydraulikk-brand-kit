@@ -8,6 +8,8 @@ import heroImage0053 from "../images/20260628_MBhydraulikk_0053.jpg";
 import heroImage1729 from "../images/D71_1729.JPG";
 import heroImage0124 from "../images/20260628_MBhydraulikk_0124.jpg";
 import heroImage0081 from "../images/20260628_MBhydraulikk_0081.jpg";
+import newsImage0088 from "../images/20260628_MBhydraulikk_0088.jpg";
+import newsDeliveryImage from "../images/Skjermbilde 2026-09-01 kl. 12.11.10.png";
 
 const HERO_IMAGES = [
   heroImage0014,
@@ -48,15 +50,15 @@ function NewsPreview(): import("react/jsx-runtime").JSX.Element {
       id: "n1",
       title: "MB Hydraulikk markerer 100 år i 2026",
       desc: "Jubileumsåret blir markert med historisk tilbakeblikk, kundehistorier og fokus på vidare utvikling frå Mjosundet.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop&auto=format",
-      alt: "Møte med tekniske teikningar",
+      image: newsImage0088,
+      alt: "MB Hydraulikk-utstyr ved sjøen",
     },
     {
       id: "n2",
       title: "Ny leveranse til maritimt prosjekt",
       desc: "Skreddarsydd hydraulikkløysing med lågt vedlikehaldsbehov er levert til internasjonalt fartøy i operativ drift.",
-      image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&h=600&fit=crop&auto=format",
-      alt: "Maritimt fartøy i hamn",
+      image: newsDeliveryImage,
+      alt: "Ny hydraulisk leveranse",
     },
   ];
 
@@ -84,11 +86,11 @@ function NewsPreview(): import("react/jsx-runtime").JSX.Element {
                 transform: isHovered ? "translateY(-2px)" : "none",
               }}
             >
-              <div style={{ padding: "12px 0 12px 12px", height: "100%" }}>
+              <div style={{ boxSizing: "border-box", height: 320, padding: "12px 0 12px 12px", overflow: "hidden" }}>
                 <img
                   src={item.image}
                   alt={item.alt}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
                 />
               </div>
               <div style={{ padding: 22, display: "flex", flexDirection: "column" }}>
@@ -246,7 +248,7 @@ function FooterPreview() {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 48, marginBottom: 48 }}>
         <div>
           <MBHLogo variant="full" theme="warmWhite" size="md" />
-          <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "rgba(250,246,241,0.5)", marginTop: 16, lineHeight: 1.8, maxWidth: 280 }}>
+          <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "#faf6f1", marginTop: 16, lineHeight: 1.8, maxWidth: 280 }}>
             MB Hydraulikk AS — hydraulisk utstyr for maritimt miljø sidan 1926. Bygd i Mjosundet, Aure. Lokal kompetanse, global rekkevidde.
           </p>
         </div>
@@ -258,14 +260,14 @@ function FooterPreview() {
           <div key={col.title}>
             <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", color: "#A84F2E", marginBottom: 20 }}>{col.title}</div>
             {col.items.map(item => (
-              <div key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "rgba(250,246,241,0.55)", marginBottom: 10 }}>{item}</div>
+              <div key={item} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "#faf6f1", marginBottom: 10 }}>{item}</div>
             ))}
           </div>
         ))}
       </div>
       <div style={{ borderTop: "1px solid rgba(185,188,172,0.12)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-        <span style={{ fontSize: 12, color: "rgba(250,246,241,0.3)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>© 2026 MB Hydraulikk AS · Mjosundet, 6697 Aure</span>
-        <span style={{ fontSize: 12, color: "rgba(250,246,241,0.3)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>mbh.no · post@mbh.no</span>
+        <span style={{ fontSize: 12, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>© 2026 MB Hydraulikk AS · Mjosundet, 6697 Aure</span>
+        <span style={{ fontSize: 12, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>mbh.no · post@mbh.no</span>
       </div>
     </footer>
   );
