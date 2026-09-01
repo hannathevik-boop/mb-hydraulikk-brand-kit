@@ -92,8 +92,8 @@ export default function App() {
             ["Mjosundet", "AURE, NORGE"],
           ].map(([v, l]) => (
             <div key={l}>
-              <div style={{ fontWeight: 800, fontSize: 24, color: "#faf6f1" }}>{v}</div>
-              <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.2em", color: "#858f8f", marginTop: 4 }}>{l}</div>
+              <div style={{ fontWeight: 800, fontSize: 24, color: "#A84F2E" }}>{v}</div>
+              <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.2em", color: "#faf6f1", marginTop: 4 }}>{l}</div>
             </div>
           ))}
         </div>
