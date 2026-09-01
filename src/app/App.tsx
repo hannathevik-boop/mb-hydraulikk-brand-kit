@@ -81,8 +81,8 @@ export default function App() {
         <h1 style={{ fontWeight: 800, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 24 }}>
           MB <span style={{ color: "#A3B6B9" }}>Hydraulikk</span>
         </h1>
-        <p style={{ fontSize: 17, color: "rgba(250,246,241,0.6)", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
-          Komplett visuell identitet - logo, farger, typografi, ikonografi, UI-komponenter og nettside. For et selskap som har utviklet og produsert hydraulisk utstyr for maritimt miljø siden 1926.
+        <p style={{ fontSize: 17, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
+          Komplett visuell identitet - farger, typografi, ikonografi, UI-komponenter og nettside. For et selskap som har utviklet og produsert hydraulisk utstyr for maritimt miljø siden 1926.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 24, borderTop: "1px solid rgba(185,188,172,0.15)", paddingTop: 40 }}>
           {[
