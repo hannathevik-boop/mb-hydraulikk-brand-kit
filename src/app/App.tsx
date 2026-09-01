@@ -16,7 +16,6 @@ const LOCAL_PPTX_DOWNLOAD_URL = "/brand-guideline/MBH-Brand-Guideline.pptx";
 const LOCAL_MP4_DOWNLOAD_URL = "/brand-guideline/MBH-Brand-Guideline.mp4";
 
 const SECTIONS = [
-  { id: "logo", label: "Logo" },
   { id: "colors", label: "Farger" },
   { id: "type", label: "Typografi" },
   { id: "icons", label: "Ikon" },
@@ -28,7 +27,7 @@ const SECTIONS = [
 ];
 
 export default function App() {
-  const [active, setActive] = useState("logo");
+  const [active, setActive] = useState("colors");
 
   function goTo(id: string) {
     setActive(id);
@@ -104,7 +103,7 @@ export default function App() {
 
       {/* Sections */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 clamp(16px, 4vw, 80px)" }}>
-        <div id="logo"><LogoSection /></div>
+        <div id="logo" hidden><LogoSection /></div>
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="colors"><ColorPaletteSection /></div>
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
