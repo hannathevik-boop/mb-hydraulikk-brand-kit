@@ -80,7 +80,7 @@ export default function App() {
             VISUELL IDENTITET · mbh.no · MJOSUNDET, AURE
           </span>
         </div>
-        <h1 style={{ display: "flex", alignItems: "center", gap: 16, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 24 }}>
+        <h1 style={{ display: "flex", alignItems: "center", gap: 16, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 5 }}>
           <span style={{ display: "block", height: "0.92em", width: "auto" }}>
            <span style={{ color: "#faf6f1" }}>MB</span>
           </span>
