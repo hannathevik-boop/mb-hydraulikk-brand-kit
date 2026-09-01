@@ -8,7 +8,7 @@ import midSmallDarkSvg from "./ui/svg-logos-test/mid-small-dark.svg";
 
 interface LogoProps {
   variant?: "full" | "mark" | "wordmark";
-  theme?: "dark" | "light" | "crimson";
+  theme?: "dark" | "light" | "crimson" | "warmWhite";
   size?: "sm" | "md" | "lg" | "xl" | number;
   className?: string;
   color?: string;
@@ -23,9 +23,11 @@ const sizeMap = {
 
 export function getLogoAsset(
   variant: "full" | "mark" | "wordmark" = "full",
-  theme: "dark" | "light" | "crimson" = "dark",
+  theme: "dark" | "light" | "crimson" | "warmWhite" = "dark",
   size: "sm" | "md" | "lg" | "xl" | number = "md"
 ): string {
+  if (theme === "warmWhite") return whiteLogoSvg;
+
   if (variant === "mark") {
     return theme === "light" ? blueLogoSvg : whiteLogoSvg;
   }

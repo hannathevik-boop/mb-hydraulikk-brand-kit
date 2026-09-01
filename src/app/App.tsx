@@ -6,7 +6,6 @@ import { IconSection } from "./components/IconSection";
 import { UIComponentsSection } from "./components/UIComponentsSection";
 import { MarketingFigures } from "./components/MarketingFigures";
 import { WebsitePreviewSection } from "./components/WebsitePreview";
-import { PatternSection } from "./components/PatternSection";
 import { Button } from "./components/ui/button";
 
 const CANVA_PRESENTATION_URL = "https://www.canva.com/design/DAHN713tf1U/rd5-8k1Sk0fJIwVw9uaasA/view";
@@ -21,7 +20,6 @@ const SECTIONS = [
   { id: "icons", label: "Ikon" },
   { id: "components", label: "Komponenter" },
   { id: "figures", label: "Figurer" },
-  { id: "patterns", label: "Mønstre" },
   { id: "presentation", label: "Presentasjon" },
   { id: "website", label: "Nettside" },
 ];
@@ -40,7 +38,7 @@ export default function App() {
 
       {/* Header */}
       <header style={{ background: "#10464E", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-        <MBHLogo variant="full" theme="light" size="sm" />
+        <MBHLogo variant="full" theme="warmWhite" size="sm" />
         <nav style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
           {SECTIONS.map(s => {
             const isActive = active === s.id;
@@ -115,8 +113,6 @@ export default function App() {
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="figures"><MarketingFigures /></div>
         <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
-        <div id="patterns"><PatternSection /></div>
-        <div style={{ height: 1, background: "rgba(16,70,78,0.1)" }} />
         <div id="presentation" style={{ padding: "56px 0" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12, marginBottom: 20 }}>
             <div>
@@ -155,7 +151,7 @@ export default function App() {
         <div id="website"><WebsitePreviewSection /></div>
 
         <div style={{ borderTop: "1px solid rgba(16,70,78,0.1)", padding: "32px 0", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-          <MBHLogo variant="wordmark" theme="light" size="sm" />
+          <MBHLogo variant="full" theme="warmWhite" size="sm" />
           <span style={{ fontSize: 11, color: "#b9bcac", letterSpacing: "0.1em" }}>BRAND KIT v1.0 · 2026 · MB HYDRAULIKK AS · MJOSUNDET, AURE</span>
         </div>
       </div>
