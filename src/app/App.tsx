@@ -86,7 +86,7 @@ export default function App() {
           </span>
           <span style={{ color: "#A3B6B9" }}>Hydraulikk AS</span>
         </h1>
-        <img src={lightningSvg} alt="" aria-hidden="true" style={{ display: "block", width: 115, height: "auto", marginBottom: 24 }} />
+        <img src={lightningSvg} alt="" aria-hidden="true" style={{ display: "block", width: 500, height: "auto", marginBottom: 24 }} />
         <p style={{ fontSize: 17, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
           Komplett visuell identitet - farger, typografi, ikonografi, UI-komponenter og eksempel på nettside. For et selskap som har utviklet og produsert hydraulisk utstyr for maritimt miljø siden 1926.
         </p>
