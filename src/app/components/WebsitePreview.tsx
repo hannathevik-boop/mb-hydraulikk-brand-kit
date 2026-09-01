@@ -119,7 +119,8 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
   }, []);
 
   return (
-    <div style={{ position: "relative", background: "#0a2e35", minHeight: "min(520px, 55vh)", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+    <>
+      <div style={{ position: "relative", background: "#0a2e35", minHeight: "min(520px, 55vh)", display: "flex", flexDirection: "column", overflow: "hidden" }}>
       {HERO_IMAGES.map((image, index) => (
         <img
           key={image}
@@ -147,12 +148,13 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
           <div style={{ background: "#A84F2E", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
             SJÅ PRODUKT
           </div>
-          <div style={{ background: "#10464e", border: "1.5px solid #1a6070", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
+          <div style={{ background: "#10464e", color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: "0.08em", padding: "14px 32px", cursor: "pointer", minWidth: "max-content" }}>
             TA KONTAKT
           </div>
         </div>
       </div>
-      <div style={{ position: "relative", zIndex: 1, marginTop: "auto", background: "rgba(16,70,78,0.8)", borderTop: "1px solid rgba(185,188,172,0.2)", padding: "24px clamp(16px, 5vw, 80px)", display: "flex", gap: 64, flexWrap: "wrap" }}>
+      </div>
+      <div style={{ background: "#faf6f1", padding: "32px clamp(16px, 5vw, 80px)", display: "flex", gap: 64, flexWrap: "wrap" }}>
         {[
           { value: "100 år", label: "STIFTA 1926" },
           { value: "Global", label: "REKKEVIDDE" },
@@ -160,12 +162,12 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
           { value: "Mjosundet", label: "AURE, NOREG" },
         ].map(s => (
           <div key={s.label} style={{ minWidth: 160 }}>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 22, color: "#faf6f1" }}>{s.value}</div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", color: "#858f8f", marginTop: 4 }}>{s.label}</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 22, color: "#10464e" }}>{s.value}</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", color: "#A84F2E", marginTop: 4 }}>{s.label}</div>
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
