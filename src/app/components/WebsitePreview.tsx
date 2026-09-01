@@ -113,7 +113,7 @@ function HeroPreview(): import("react/jsx-runtime").JSX.Element {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveImage((currentImage) => (currentImage + 1) % HERO_IMAGES.length);
-    }, 6000);
+    }, 5000);
 
     return () => window.clearInterval(intervalId);
   }, []);

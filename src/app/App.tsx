@@ -7,6 +7,7 @@ import { UIComponentsSection } from "./components/UIComponentsSection";
 import { MarketingFigures } from "./components/MarketingFigures";
 import { WebsitePreviewSection } from "./components/WebsitePreview";
 import { Button } from "./components/ui/button";
+import lightningSvg from "./components/ui/svg-logos-test/mbh-lyn.svg";
 
 const CANVA_PRESENTATION_URL = "https://www.canva.com/design/DAHN713tf1U/rd5-8k1Sk0fJIwVw9uaasA/view";
 const CANVA_EMBED_URL = `${CANVA_PRESENTATION_URL}?embed`;
@@ -78,9 +79,10 @@ export default function App() {
             VISUELL IDENTITET · mbh.no · MJOSUNDET, AURE
           </span>
         </div>
-        <h1 style={{ fontWeight: 800, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 24 }}>
-          MB <span style={{ color: "#A3B6B9" }}>Hydraulikk</span>
+        <h1 style={{ fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 24 }}>
+          MB <span style={{ color: "#A3B6B9" }}>Hydraulikk AS</span>
         </h1>
+        <img src={lightningSvg} alt="" aria-hidden="true" style={{ display: "block", height: 42, width: "auto", marginBottom: 24 }} />
         <p style={{ fontSize: 17, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
           Komplett visuell identitet - farger, typografi, ikonografi, UI-komponenter og eksempel på nettside. For et selskap som har utviklet og produsert hydraulisk utstyr for maritimt miljø siden 1926.
         </p>
