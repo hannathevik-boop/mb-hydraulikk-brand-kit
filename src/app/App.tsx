@@ -80,13 +80,13 @@ export default function App() {
             VISUELL IDENTITET · mbh.no · MJOSUNDET, AURE
           </span>
         </div>
-        <h1 style={{ display: "flex", alignItems: "center", gap: 16, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 48 }}>
+        <h1 style={{ display: "flex", alignItems: "baseline", gap: 8, fontWeight: 700, fontSize: "clamp(3rem, 5vw, 5rem)", color: "#faf6f1", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: 56, whiteSpace: "nowrap" }}>
           <span style={{ display: "block", height: "0.92em", width: "auto" }}>
-           <span style={{ color: "#faf6f1" }}>MB</span>
+           <span style={{ color: "#faf6f1", position: "relative" }}>MB</span>
           </span>
           <span style={{ position: "relative", color: "#A3B6B9" }}>
             Hydraulikk AS
-            <img src={lightningSvg} alt="" aria-hidden="true" style={{ position: "absolute", top: "1.22em", left: "1.7em", width: "4em", height: "auto" }} />
+            <img src={lightningSvg} alt="" aria-hidden="true" style={{ position: "absolute", top: "0.93em", left: "1.15em", width: "5.17em", height: "auto" }} />
           </span>
         </h1>
         <p style={{ fontSize: 17, color: "#faf6f1", lineHeight: 1.75, maxWidth: 720, marginBottom: 56 }}>
