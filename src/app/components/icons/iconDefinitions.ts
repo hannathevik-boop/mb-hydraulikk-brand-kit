@@ -1,4 +1,4 @@
-export const ICON_CATEGORIES = ["Kontakt", "Sosiale medier", "Sted", "Handling", "Generelt"] as const;
+export const ICON_CATEGORIES = ["Hydraulikk", "Maritim", "Kontakt", "Sosiale medier", "Sted", "Handling", "Generelt"] as const;
 export type IconCategory = (typeof ICON_CATEGORIES)[number];
 
 type Def = {
@@ -35,6 +35,26 @@ const defs = {
   info: { label: "Informasjon", category: "Generelt", paths: ["M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0z", "M12 11v6M12 7h.01"], fills: ["M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0z", "M9.5 10h5v8h-5z"] },
   document: { label: "Dokument", category: "Generelt", paths: ["M6 2h8l5 5v15H6z", "M14 2v6h5M9 13h6M9 17h6"], fills: ["M6 2h8l5 5v15H6z", "M14 2l5 5h-5z"] },
   check: { label: "Godkjent", category: "Generelt", paths: ["M22 11.1V12a10 10 0 1 1-5.9-9.1", "m22 4-10 10-3-3"], fills: ["M12 22a10 10 0 1 1 5.7-18.2L15 7a6 6 0 1 0 3 5h4a10 10 0 0 1-10 10z", "m9 11 3 3L22 4l-3-2-7 7z"] },
+  valve: { label: "Ventil", category: "Hydraulikk", paths: ["M3 10h18v4H3z", "M12 3 8.5 10h7z", "M12 21 8.5 14h7z", "M12 3V1M10 1h4"], fills: ["M3 10h18v4H3z", "M12 3 8.5 10h7zM12 21 8.5 14h7z"] },
+  piston: { label: "Stempel", category: "Hydraulikk", paths: ["M4 4h16v16H4z", "M7 7h10v10H7z", "M1 12h3M20 12h3"], fills: ["M4 4h16v16H4z", "M7 7h10v10H7z"] },
+  "pressure-gauge": { label: "Manometer", category: "Hydraulikk", paths: ["M20 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0z", "M12 19v3M9 22h6", "M12 11l4-4", "M7 7l1 1M17 7l-1 1"], fills: ["M20 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0z", "M5 11h14a7 7 0 0 1-14 0z"] },
+  hydraulic: { label: "Hydraulikkaggregat", category: "Hydraulikk", paths: ["M3 3h8v14H3z", "M5 5h4v5H5z", "M11 10h10v8", "M16 14h7v5h-7z", "M7 17v4M5 21h4"], fills: ["M3 3h8v14H3z", "M16 14h7v5h-7z"] },
+  cylinder: { label: "Sylinder", category: "Hydraulikk", paths: ["M4 7h14v8H4z", "M2 9h2v4H2z", "M19 9h3v4h-3z", "M10 7V4M14 7V4", "M8 11h8"], fills: ["M4 7h14v8H4z", "M19 9h3v4h-3z"] },
+  pump: { label: "Pumpe", category: "Hydraulikk", paths: ["M5 5h14v10H5z", "M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0z", "M8 7 5 5M16 7l3-2M8 13l-3 2M16 13l3 2", "M12 13v4"], fills: ["M5 5h14v10H5z", "M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"] },
+  pipe: { label: "Rør", category: "Hydraulikk", paths: ["M5 9h14a3 3 0 0 1 0 6H5a3 3 0 0 1 0-6z", "M5 8v8M19 8v8"], fills: ["M5 9h14a3 3 0 0 1 0 6H5a3 3 0 0 1 0-6z", "M8 9h8v6H8z"] },
+  "oil-drop": { label: "Olje", category: "Hydraulikk", paths: ["M12 3Q17 9 17 14a5 5 0 0 1-10 0Q7 9 12 3z", "M9 15Q9 12 12 11"], fills: ["M12 3Q17 9 17 14a5 5 0 0 1-10 0Q7 9 12 3z", "M7 14a5 5 0 0 0 10 0z"] },
+  gear: { label: "Tannhjul", category: "Hydraulikk", paths: ["M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0z", "M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z", "M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M5 19l2-2"], fills: ["M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0z", "M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"] },
+  wrench: { label: "Verktøy", category: "Hydraulikk", paths: ["M16 3a5 5 0 0 1 5 5 5 5 0 0 1-5 5v-2a3 3 0 0 0 3-3 3 3 0 0 0-3-3z", "M14 11 4 21", "M5 21a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"], fills: ["M16 3a5 5 0 0 1 5 5 5 5 0 0 1-5 5v-2a3 3 0 0 0 3-3 3 3 0 0 0-3-3z", "M14 11l1.5 1.5L5 21l-2-1z"] },
+  anchor: { label: "Anker", category: "Maritim", paths: ["M14 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z", "M12 7v13", "M5 10Q5 19 12 20Q19 19 19 10", "M7 10h10"], fills: ["M5 10Q5 19 12 20Q19 19 19 10z", "M14 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"] },
+  propeller: { label: "Propell", category: "Maritim", paths: ["M13.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z", "M12 10.5Q9 4 5 5Q6 9 10.5 11", "M13.5 12Q20 9 19 5Q15 6 13 10.5", "M12 13.5Q15 20 19 19Q18 15 13.5 13", "M10.5 12Q4 15 5 19Q9 18 11 13.5"], fills: ["M12 10.5Q9 4 5 5Q6 9 10.5 11zM12 13.5Q15 20 19 19Q18 15 13.5 13z", "M13.5 12Q20 9 19 5Q15 6 13 10.5zM10.5 12Q4 15 5 19Q9 18 11 13.5z"] },
+  wave: { label: "Bølge", category: "Maritim", paths: ["M1 9Q4 5 7 9Q10 13 13 9Q16 5 19 9Q22 13 23 11", "M1 14Q4 10 7 14Q10 18 13 14Q16 10 19 14Q22 18 23 16"], fills: ["M1 14Q4 10 7 14Q10 18 13 14Q16 10 19 14Q22 18 23 16V21H1z"] },
+  ship: { label: "Skip", category: "Maritim", paths: ["M4 14 2 18Q12 21 22 18L20 14z", "M7 8h10v6H7z", "M9 4h6v4H9z", "M12 1v3", "M8 10h3M13 10h4"], fills: ["M4 14 2 18Q12 21 22 18L20 14z", "M7 8h10v6H7z"] },
+  boat: { label: "Båt", category: "Maritim", paths: ["M3 15C7 18 17 18 21 15L19 13H5z", "M5 13 6 9h6l3 2 2-2h1l1 4", "M6 15h3M11 15h4", "M10 9V5M14 9V6", "M2 17h20"], fills: ["M3 15C7 18 17 18 21 15L19 13H5z", "M5 13 6 9h6l3 2 2-2h1l1 4z"] },
+  crane: { label: "Kran", category: "Maritim", paths: ["M4 17h16v4H4z", "M8 17V7", "M8 7l9-2 1 4", "M16 6v7", "M10 12l5-2", "M15 10l2 2-2 2", "M13 13v6", "M11 17h4"], fills: ["M4 17h16v4H4z", "M8 7l9-2 1 4z"] },
+  winch: { label: "Vinsj", category: "Maritim", paths: ["M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0z", "M12 7V4M12 17v3M7 12H4M17 12h3M9 9 6 6M15 9l3-3M9 15l-3 3M15 15l3 3"], fills: ["M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0z", "M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"] },
+  chain: { label: "Kjetting", category: "Maritim", paths: ["M10 12a3 5 0 1 1-6 0 3 5 0 0 1 6 0z", "M20 12a3 5 0 1 1-6 0 3 5 0 0 1 6 0z", "M17 7a5 3 0 1 1-10 0 5 3 0 0 1 10 0z", "M17 17a5 3 0 1 1-10 0 5 3 0 0 1 10 0z", "M10 12h4"], fills: ["M10 12a3 5 0 1 1-6 0 3 5 0 0 1 6 0zM20 12a3 5 0 1 1-6 0 3 5 0 0 1 6 0z", "M17 7a5 3 0 1 1-10 0 5 3 0 0 1 10 0zM17 17a5 3 0 1 1-10 0 5 3 0 0 1 10 0z"] },
+  buoy: { label: "Bøye", category: "Maritim", paths: ["M19 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z", "M12 17v5M10 22h4", "M5 10h14", "M7 5Q12 2 17 5"], fills: ["M19 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z", "M5 10h14a7 7 0 0 1-14 0z"] },
+  shield: { label: "Sikkerhet", category: "Generelt", paths: ["M12 2l8 3v8q0 6-8 9-8-3-8-9V5z", "M8 12l3 3 5-6"], fills: ["M12 2l8 3v8q0 6-8 9-8-3-8-9V5z", "M4 13q0 6 8 9 8-3 8-9z"] },
 } as const satisfies Record<string, Def>;
 
 export type MbhIconName = keyof typeof defs;

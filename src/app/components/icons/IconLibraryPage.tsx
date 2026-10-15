@@ -72,7 +72,7 @@ export function IconLibraryPage() {
               </div>
             </div>
             <label className="mi-search">
-              <MbhIcon name="search" palette="black" size={16} />
+              <MbhIcon name="search" palette="teal" size={16} />
               <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Søk i ikoner" aria-label="Søk i ikoner" />
             </label>
           </div>
@@ -140,7 +140,7 @@ export function IconLibraryPage() {
             </button>
             <button type="button" className="mi-btn secondary" style={{ marginTop: 8 }} onClick={() => downloadIconSvg(selected.name, palette)}>
               Last ned .svg
-              <MbhIcon name="download" palette="black" size={16} />
+              <MbhIcon name="download" palette="teal" size={16} />
             </button>
             <p style={{ marginTop: 16, fontSize: 12, lineHeight: 1.6, color: "#858f8f" }}>Dobbeltklikk et ikon i oversikten for å kopiere det direkte.</p>
 
