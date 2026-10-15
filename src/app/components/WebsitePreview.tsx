@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MBHLogo from "./MBHLogo";
 import { IconHydraulic, IconCrane, IconPropeller, IconGear, IconShield, IconCompass } from "./MBHIcons";
 import { SectionLabel } from "./BrandSection";
+import { MbhIcon } from "./icons/Icon";
 import heroImage0014 from "../images/20260628_MBhydraulikk_0014.jpg";
 import heroImage0134 from "../images/20260701_MBHdrone_Thevik_0134.jpg";
 import heroImage0053 from "../images/20260628_MBhydraulikk_0053.jpg";
@@ -266,8 +267,14 @@ function FooterPreview() {
         ))}
       </div>
       <div style={{ borderTop: "1px solid rgba(185,188,172,0.12)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-        <span style={{ fontSize: 12, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>© 2026 MB Hydraulikk AS · Mjosundet, 6697 Aure</span>
-        <span style={{ fontSize: 12, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>mbh.no · post@mbh.no</span>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 12, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <MbhIcon name="pin" palette="white" size={18} />
+          © 2026 MB Hydraulikk AS · Mjosundet, 6697 Aure
+        </span>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 12, color: "#faf6f1", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <MbhIcon name="mail" palette="white" size={18} aria-label="E-post" />
+          mbh.no · post@mbh.no
+        </span>
       </div>
     </footer>
   );

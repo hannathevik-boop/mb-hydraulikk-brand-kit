@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MBHLogo } from "./components/MBHLogo";
 import { LogoSection, ColorPaletteSection } from "./components/BrandSection";
 import { TypographySection } from "./components/TypographySection";
@@ -7,6 +7,7 @@ import { UIComponentsSection } from "./components/UIComponentsSection";
 import { MarketingFigures } from "./components/MarketingFigures";
 import { WebsitePreviewSection } from "./components/WebsitePreview";
 import { Button } from "./components/ui/button";
+import { BrandKitHeader } from "./components/BrandKitHeader";
 import lightningSvg from "./components/ui/svg-logos-test/lynrød.svg";
 import mbMarkSvg from "./components/ui/svg-logos-test/MBlys.svg";
 
@@ -16,18 +17,13 @@ const CANVA_DOWNLOAD_URL = `${CANVA_PRESENTATION_URL}?download`;
 const LOCAL_PPTX_DOWNLOAD_URL = "/brand-guideline/MBH-Brand-Guideline.pptx";
 const LOCAL_MP4_DOWNLOAD_URL = "/brand-guideline/MBH-Brand-Guideline.mp4";
 
-const SECTIONS = [
-  { id: "colors", label: "Farger" },
-  { id: "type", label: "Typografi" },
-  { id: "icons", label: "Ikon" },
-  { id: "components", label: "Komponenter" },
-  { id: "figures", label: "Figurer" },
-  { id: "presentation", label: "Presentasjon" },
-  { id: "website", label: "Nettside" },
-];
-
 export default function App() {
   const [active, setActive] = useState("colors");
+
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (id) document.getElementById(id)?.scrollIntoView();
+  }, []);
 
   function goTo(id: string) {
     setActive(id);
@@ -38,39 +34,7 @@ export default function App() {
   return (
     <div style={{ background: "#faf6f1", minHeight: "100vh", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
 
-      {/* Header */}
-      <header style={{ background: "#0a2e35", padding: "0 clamp(12px, 4vw, 40px)", minHeight: 60, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-        <MBHLogo variant="full" theme="warmWhite" size="sm" />
-        <nav style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
-          {SECTIONS.map(s => {
-            const isActive = active === s.id;
-
-            return (
-            <Button
-              key={s.id}
-              variant="ghost"
-              size="sm"
-              className="bg-[#0a2e35] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#A84F2E] hover:text-[#faf6f1]"
-              style={{ borderRadius: 0, boxShadow: "none" }}
-              onClick={() => goTo(s.id)}
-            >
-              <span style={{ borderBottom: isActive ? "1px solid #faf6f1" : "1px solid transparent", paddingBottom: 2 }}>
-                {s.label}
-              </span>
-            </Button>
-            );
-          })}
-        </nav>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="bg-[#A84F2E] px-4 text-[11px] tracking-[0.08em] text-[#faf6f1] hover:bg-[#73331f] hover:text-[#faf6f1]"
-          style={{ borderRadius: 0, boxShadow: "none" }}
-          onClick={() => goTo("website")}
-        >
-          Preview demo
-        </Button>
-      </header>
+      <BrandKitHeader active={active} onSectionClick={goTo} />
 
       {/* Cover */}
       <div style={{ background: "#0a2e35", padding: "60px clamp(20px, 6vw, 80px) 80px" }}>
