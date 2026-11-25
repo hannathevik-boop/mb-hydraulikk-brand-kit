@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/brand-kit/ikoner",
+      "destination": "/index.html"
+    }
+  ]
+}
